@@ -1,0 +1,24 @@
+{
+  "name": "figello",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EagleVee/figello.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EagleVee/figello/issues"
+  },
+  "homepage": "https://github.com/EagleVee/figello#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "nodemon": "^1.19.3"
+  }
+}
