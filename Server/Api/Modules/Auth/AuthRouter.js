@@ -1,10 +1,10 @@
 import Express from 'express'
+import Service from './AuthService'
 const Router = Express.Router()
-const service = require('./auth.service')
 
 Router.post('/register', async function (req, res) {
   try {
-    const data = await service.register(req.body)
+    const data = await Service.register(req.body)
     res.status(200).send(data)
   } catch (err) {
     res.status(500).send({
@@ -15,7 +15,7 @@ Router.post('/register', async function (req, res) {
 
 Router.post('/login', async function (req, res) {
   try {
-    const data = await service.login(req.body)
+    const data = await Service.login(req.body)
     res.status(200).send(data)
   } catch (err) {
     res.status(500).send({

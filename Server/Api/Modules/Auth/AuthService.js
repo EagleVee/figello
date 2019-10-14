@@ -1,6 +1,8 @@
-import UserRepository from '../User/UserRepository'
 import bcrypt from 'bcrypt'
-import { SECRET_KEY } from '../../../Config'
+import jwt from 'jsonwebtoken'
+
+import UserRepository from '../User/UserRepository'
+import { SECRET_KEY, JWT_SECRET } from '../../../Config'
 
 export const login = async (data) => {
   if (!data.email || !data.password) {
@@ -36,3 +38,17 @@ export const register = async (data) => {
     password: newPassword
   })
 }
+
+const generateToken = (data) => {
+  return jwt.sign({
+    data,
+    exp: Math.floor(Date.now() / 1000) + (90 * 60 * 60)
+  }, JWT_SECRET)
+}
+
+const AuthService = {
+  login,
+  register
+}
+
+export default AuthService
