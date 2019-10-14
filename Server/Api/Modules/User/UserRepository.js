@@ -20,14 +20,14 @@ const UserSchema = mongoose.Schema({
 
 const UserModel = mongoose.model('User', UserSchema)
 
-export const find = async (query) => {
-  if (query.limit && query.skip !== undefined) {
-    const limit = Number(query.limit)
-    const skip = Number(query.skip)
-    delete query.limit
-    delete query.skip
+const find = async (query) => {
+  const { paginate, page } = query
+  if (paginate && page !== undefined) {
+    const limit = Number(paginate)
+    const skip = (Number(page) - 1) * Number(paginate)
+    delete query.paginate
+    delete query.page
     return UserModel.find(query)
-      .populate('books')
       .limit(limit)
       .skip(skip)
   } else {
@@ -35,27 +35,39 @@ export const find = async (query) => {
   }
 }
 
-export const count = async (query) => {
+const count = async (query) => {
   return UserModel.count(query)
 }
 
-export const findById = async (id) => {
+const findById = async (id) => {
   return UserModel.findById(id)
 }
 
-export const findByEmail = async (email) => {
+const findByEmail = async (email) => {
   return UserModel.findOne({ email: email })
 }
 
-export const create = async (data) => {
+const create = async (data) => {
   const newDocument = new UserModel(data)
   return newDocument.save()
 }
 
-export const update = async function (id, data) {
+const update = async (id, data) => {
   return UserModel.findByIdAndUpdate(id, { $set: data }, { new: true })
 }
 
-export const deleteById = async function (id) {
+const deleteById = async (id) => {
   return UserModel.findByIdAndDelete(id)
 }
+
+const UserRepository = {
+  find,
+  findById,
+  findByEmail,
+  count,
+  create,
+  update,
+  deleteById
+}
+
+export default UserRepository
