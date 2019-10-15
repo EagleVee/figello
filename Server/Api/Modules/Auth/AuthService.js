@@ -15,10 +15,41 @@ export const login = async (data) => {
 
   const result = await bcrypt.compare(data.password, existedUser.password)
   if (result) {
+    const tokenData = {
+      _id: existedUser._id,
+      name: existedUser.name,
+      email: existedUser.email,
+      role: existedUser.role
+    }
 
+    const token = await jwt.sign(tokenData, JWT_SECRET, {
+      expiresIn: '30 days'
+    })
+
+    return token
   } else {
     throw new Error('WRONG PASSWORD!')
   }
+}
+
+const authentication = async (req, res, next) => {
+  try {
+    const token = req.headers.authorization
+    const data = await jwt.verify(token, SECRET_KEY)
+    if (data) {
+      if (data.exp <= Date.now() / 1000) {
+        res.status(401).send('Token expired!')
+      }
+    }
+    req.user = data
+    next()
+  } catch (err) {
+    res.status(401).send('Unauthenticated!')
+  }
+}
+
+const authorization = (user, roles) => {
+  return !!(user && roles.indexOf(user.role) >= 0)
 }
 
 export const register = async (data) => {
@@ -48,7 +79,9 @@ const generateToken = (data) => {
 
 const AuthService = {
   login,
-  register
+  register,
+  authentication,
+  authorization
 }
 
 export default AuthService
