@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'
 import UserRepository from '../User/UserRepository'
 import { SECRET_KEY, JWT_SECRET } from '../../../Config'
 
-export const login = async (data) => {
+const login = async (data) => {
   if (!data.email || !data.password) {
     throw new Error('MISSING INPUT!')
   }
@@ -26,10 +26,29 @@ export const login = async (data) => {
       expiresIn: '30 days'
     })
 
-    return token
+    return {
+      user: existedUser,
+      access_token: token
+    }
   } else {
     throw new Error('WRONG PASSWORD!')
   }
+}
+
+const register = async (data) => {
+  if (!data.email || !data.password || !data.name) {
+    throw new Error('MISSING INPUT!')
+  }
+  const existedUser = await UserRepository.findByEmail(data.email)
+  if (existedUser) {
+    throw new Error('USER EXISTED!')
+  }
+  const newPassword = await bcrypt.hash(data.password, SECRET_KEY)
+  return UserRepository.create({
+    name: data.name,
+    email: data.email,
+    password: newPassword
+  })
 }
 
 const authentication = async (req, res, next) => {
@@ -50,31 +69,6 @@ const authentication = async (req, res, next) => {
 
 const authorization = (user, roles) => {
   return !!(user && roles.indexOf(user.role) >= 0)
-}
-
-export const register = async (data) => {
-  console.log('data', data)
-  if (!data.email || !data.password || !data.name) {
-    throw new Error('MISSING INPUT!')
-  }
-  const existedUser = await UserRepository.findByEmail(data.email)
-  if (existedUser) {
-    throw new Error('USER EXISTED!')
-  }
-
-  const newPassword = await bcrypt.hash(data.password, SECRET_KEY)
-  return UserRepository.create({
-    name: data.name,
-    email: data.email,
-    password: newPassword
-  })
-}
-
-const generateToken = (data) => {
-  return jwt.sign({
-    data,
-    exp: Math.floor(Date.now() / 1000) + (90 * 60 * 60)
-  }, JWT_SECRET)
 }
 
 const AuthService = {
