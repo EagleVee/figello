@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b997840-f2d1-451d-91ed-57daa6cab2c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Client/src/Config/Remote.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Configs/Remote.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Lib/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Lib/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Api/Modules/Auth/AuthService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/Auth/AuthService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Config/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Config/Index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,20 +20,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+            <state relative-caret-position="135">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -57,28 +42,52 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/Api/Modules/Auth/AuthService.js">
+        <entry file="file://$PROJECT_DIR$/server/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="78" column="40" selection-start-line="78" selection-start-column="40" selection-end-line="78" selection-end-column="40" />
+            <state relative-caret-position="148">
+              <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/package.json">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="152">
+              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="210">
+                <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/Lib/API.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+            <state>
+              <caret column="24" selection-start-column="24" selection-end-column="24" />
+              <folding>
+                <element signature="e#139#294#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -95,8 +104,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+            <state relative-caret-position="90">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="9" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -104,17 +113,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/Api/Modules/User/UserRouter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-309">
+            <state relative-caret-position="75">
               <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/Config/ResponseJSON.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -172,8 +172,11 @@
         <option value="$PROJECT_DIR$/server/Api/Modules/Auth/AuthService.js" />
         <option value="$PROJECT_DIR$/server/App.js" />
         <option value="$PROJECT_DIR$/server/Config/Index.js" />
+        <option value="$PROJECT_DIR$/client/package.json" />
         <option value="$PROJECT_DIR$/server/package.json" />
+        <option value="$PROJECT_DIR$/client/src/Lib/API.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -211,6 +214,19 @@
             <path>
               <item name="figello" type="b2602c69:ProjectViewProjectNode" />
               <item name="figello" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="figello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="figello" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="figello" type="b2602c69:ProjectViewProjectNode" />
+              <item name="figello" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -230,13 +246,18 @@
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.standard" value="$PROJECT_DIR$/node_modules/standard" />
+    <property name="node.js.selected.package.eslint" value="" />
+    <property name="node.js.selected.package.standard" value="$USER_HOME$/.npm-global/lib/node_modules/standard" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
     <property name="standardjs.codestyle.accepted" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -249,6 +270,23 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -359,11 +397,25 @@
       <option name="project" value="LOCAL" />
       <updated>1571234665652</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix modules">
+      <created>1571241199195</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1571241199195</updated>
+    </task>
+    <task id="LOCAL-00015" summary="remove standard">
+      <created>1571241249705</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1571241249705</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26085000" />
+    <option name="totallyTimeSpent" value="27721000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="713" extended-state="0" />
@@ -381,7 +433,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32850242" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4988086" weight="0.3252818" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4988086" visible="true" weight="0.3252818" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50119144" side_tool="true" weight="0.3252818" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -433,7 +485,9 @@
     <MESSAGE value="add mongo connect" />
     <MESSAGE value="add validate and refresh token api" />
     <MESSAGE value="fix access token service" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix access token service" />
+    <MESSAGE value="fix modules" />
+    <MESSAGE value="remove standard" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove standard" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/package-lock.json" />
@@ -448,7 +502,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/jsonwebtoken/sign.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/jsonwebtoken/index.js" />
-    <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/server/Api/Modules/User/UserRepository.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -493,29 +546,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/Api/Modules/Auth/AuthRouter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/Api/Modules/User/UserRouter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-309">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/Api/Modules/Auth/AuthService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="78" column="40" selection-start-line="78" selection-start-column="40" selection-end-line="78" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+        <state relative-caret-position="180">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
@@ -524,8 +556,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
+        <state relative-caret-position="150">
           <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Api/Modules/Auth/AuthService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="78" column="40" selection-start-line="78" selection-start-column="40" selection-end-line="78" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Config/Index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Api/Modules/User/UserRouter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/Lib/API.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+          <folding>
+            <element signature="e#139#294#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -539,31 +609,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/Config/Index.js">
+    <entry file="file://$PROJECT_DIR$/client/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="90">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="9" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/package.json">
+    <entry file="file://$PROJECT_DIR$/server/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        <state relative-caret-position="135">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        <state relative-caret-position="148">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+        <state relative-caret-position="152">
+          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="210">
+            <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
