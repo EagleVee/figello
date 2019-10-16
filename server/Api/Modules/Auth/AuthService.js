@@ -8,11 +8,11 @@ import { JWT_SECRET, SECRET_KEY, TOKEN_EXPIRE_MILLISECOND } from '../../../Confi
 
 const login = async (data) => {
   if (!data.email || !data.password) {
-    throw new Error('MISSING INPUT!')
+    throw new Error('Missing input!')
   }
   const existedUser = await UserRepository.findByEmail(data.email)
   if (!existedUser) {
-    throw new Error('CANNOT FIND USER WITH THIS EMAIL!')
+    throw new Error('This email has not been registered!')
   }
 
   const result = await bcrypt.compare(data.password, existedUser.password)
@@ -33,7 +33,7 @@ const login = async (data) => {
       access_token: accessToken
     }
   } else {
-    throw new Error('WRONG PASSWORD!')
+    throw new Error('You have entered wrong password!')
   }
 }
 

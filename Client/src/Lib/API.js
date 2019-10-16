@@ -7,7 +7,7 @@ import {
   REQUEST_TIME_OUT, STATUS_BAD_REQUEST,
   STATUS_INTERNAL_SERVER_ERROR,
   STATUS_OK, STATUS_UNAUTHORIZED
-} from '../Configs/Remote'
+} from '../Config/Remote'
 
 const instance = axios.create({
   baseURL: API_ENDPOINT,

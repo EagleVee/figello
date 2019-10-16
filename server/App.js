@@ -13,9 +13,10 @@ app.use(BodyParser.urlencoded())
 app.use(BodyParser.json())
 app.use('/api/user', UserRouter)
 app.use('/api/auth', AuthRouter)
+app.use(Express.static('../client/public'))
 
 const server = app.listen(PORT, function () {
   console.log(`Server run at localhost:${PORT}`)
 })
 
-// export default app
+export default app
