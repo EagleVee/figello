@@ -74,24 +74,6 @@ const authorization = (user, roles) => {
   return !!(user && roles.indexOf(user.role) >= 0)
 }
 
-const validateToken = async (token) => {
-  const accessToken = await AccessTokenRepository.findByToken(token)
-  if (!accessToken) {
-    throw new Error('Invalid token!')
-  }
-  if (accessToken.expire_at <= Date.now()) {
-    return {
-      jwt_token: token,
-      is_alive: false
-    }
-  }
-
-  return {
-    jwt_token: accessToken.jwt_token,
-    is_alive: true
-  }
-}
-
 const refreshToken = async (token) => {
   const newExpireDate = Date.now() + TOKEN_EXPIRE_MILLISECOND
   return AccessTokenRepository.updateExpireAt(token, newExpireDate)
@@ -101,7 +83,8 @@ const service = {
   login,
   register,
   authentication,
-  authorization
+  authorization,
+  refreshToken
 }
 
 export default service
