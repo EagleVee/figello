@@ -2,7 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b997840-f2d1-451d-91ed-57daa6cab2c4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/Auth/AuthService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Api/Modules/Auth/AuthService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/App/Configs/Remote.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/App/Lib/API.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/serviceWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/Auth/AuthRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/Auth/AuthRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/Auth/AuthService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/Auth/AuthService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/Board/BoardRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/Board/BoardRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/Board/BoardRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/Board/BoardRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/Board/BoardService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/Board/BoardService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/Project/ProjectRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/Project/ProjectRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/Project/ProjectRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/Project/ProjectRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/Project/ProjectService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/Project/ProjectService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/Task/TaskRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/Task/TaskRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/Task/TaskRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/Task/TaskRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/Task/TaskService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/Task/TaskService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/TaskInterface/TaskIntefaceRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/TaskInterface/TaskIntefaceRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/TaskInterface/TaskInterfaceRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/TaskInterface/TaskInterfaceRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/TaskInterface/TaskInterfaceService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/TaskInterface/TaskInterfaceService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/User/UserRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/User/UserRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/User/UserRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/User/UserRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Api/Modules/User/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Api/Modules/User/UserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Config/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Config/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,10 +65,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/App.js">
+        <entry file="file://$PROJECT_DIR$/server/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+            <state relative-caret-position="300">
+              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -37,10 +77,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/Api/Modules/Auth/AuthRouter.js">
+        <entry file="file://$PROJECT_DIR$/server/Api/Modules/Auth/AuthRouter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+            <state relative-caret-position="165">
+              <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -48,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Server/Api/Modules/Auth/AuthService.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/Api/Modules/Auth/AuthService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+            <state relative-caret-position="423">
+              <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -60,20 +100,42 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/Api/Modules/User/UserRepository.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/App/Lib/API.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-203">
+            <state relative-caret-position="30">
+              <caret line="2" column="76" selection-start-line="2" selection-start-column="76" selection-end-line="2" selection-end-column="76" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#65#221#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/App/Configs/Remote.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="49" selection-start-column="49" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/Api/Modules/User/UserRepository.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
               <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/Config/Index.js">
+        <entry file="file://$PROJECT_DIR$/server/Config/Index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -99,7 +161,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="v1" />
+        <entry key="$PROJECT_DIR$" value="feature/v1_api_modules" />
       </map>
     </option>
   </component>
@@ -122,9 +184,11 @@
         <option value="$PROJECT_DIR$/Server/Config/Index.js" />
         <option value="$PROJECT_DIR$/Server/Api/Modules/User/UserRepository.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/Server/App.js" />
         <option value="$PROJECT_DIR$/Server/Api/Modules/Auth/AuthRouter.js" />
         <option value="$PROJECT_DIR$/Server/Api/Modules/Auth/AuthService.js" />
+        <option value="$PROJECT_DIR$/Client/App/Configs/Remote.js" />
+        <option value="$PROJECT_DIR$/Server/App.js" />
+        <option value="$PROJECT_DIR$/Client/App/Lib/API.js" />
       </list>
     </option>
   </component>
@@ -157,34 +221,7 @@
             <path>
               <item name="figello" type="b2602c69:ProjectViewProjectNode" />
               <item name="figello" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figello" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="Api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figello" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="Api" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figello" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="Api" type="462c0819:PsiDirectoryNode" />
-              <item name="Modules" type="462c0819:PsiDirectoryNode" />
-              <item name="Auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="figello" type="b2602c69:ProjectViewProjectNode" />
-              <item name="figello" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="Config" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -209,6 +246,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
     <property name="standardjs.codestyle.accepted" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -321,11 +363,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19572000" />
+    <option name="totallyTimeSpent" value="21432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="713" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -339,7 +380,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4988086" weight="0.3252818" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4988086" visible="true" weight="0.3252818" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50119144" side_tool="true" weight="0.3252818" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -409,20 +450,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Api/Modules/Board/BoardRouter.js">
+    <entry file="file://$PROJECT_DIR$/server/Api/Modules/Board/BoardRouter.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Api/Modules/Board/BoardRepository.js">
+    <entry file="file://$PROJECT_DIR$/server/Api/Modules/Board/BoardRepository.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Api/Modules/User/UserService.js">
+    <entry file="file://$PROJECT_DIR$/server/Api/Modules/User/UserService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Api/Modules/User/UserRouter.js">
+    <entry file="file://$PROJECT_DIR$/server/Api/Modules/User/UserRouter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
@@ -458,46 +499,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Config/Index.js">
+    <entry file="file://$PROJECT_DIR$/server/Config/Index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/App.js">
+    <entry file="file://$PROJECT_DIR$/server/Api/Modules/Auth/AuthRouter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        <state relative-caret-position="165">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Api/Modules/Auth/AuthRouter.js">
+    <entry file="file://$PROJECT_DIR$/server/Api/Modules/User/UserRepository.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Api/Modules/User/UserRepository.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-203">
+        <state relative-caret-position="255">
           <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Api/Modules/Auth/AuthService.js">
+    <entry file="file://$PROJECT_DIR$/server/Api/Modules/Auth/AuthService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="39" column="32" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+        <state relative-caret-position="423">
+          <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/App/Configs/Remote.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="49" selection-start-column="49" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/App/Lib/API.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="76" selection-start-line="2" selection-start-column="76" selection-end-line="2" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#65#221#0" expanded="true" />
           </folding>
         </state>
       </provider>
