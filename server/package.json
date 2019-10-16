@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/App.js",
-    "dev": "nodemon --exec babel-node server/App.js"
+    "start": "../node_modules/.bin/nodemon server/App.js",
+    "dev": "../node_modules/.bin/nodemon --exec babel-node server/App.js"
   },
   "repository": {
     "type": "git",
@@ -29,7 +29,11 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.4",
     "nodemon": "^1.19.3",
-    "query-string": "^6.8.3",
     "standard": "^14.3.1"
+  },
+  "standard": {
+    "ignore": [
+      "client"
+    ]
   }
 }
