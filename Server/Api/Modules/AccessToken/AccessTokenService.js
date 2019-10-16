@@ -13,18 +13,6 @@ const findById = async (id) => {
 }
 
 const create = async (data) => {
-  if (!data || !data.name || !data.email) {
-    throw new Error('Missing input!')
-  }
-
-  if (!data || !data.name || !data.email) {
-    throw new Error('Missing input!')
-  }
-
-  if (!validateEmail(data.email)) {
-    throw new Error('Email is not valid!')
-  }
-
   return Repository.create(data)
 }
 
@@ -44,11 +32,6 @@ const deleteByID = async (id) => {
   }
 
   return Repository.delete(id)
-}
-
-function validateEmail (email) {
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  return re.test(String(email).toLowerCase())
 }
 
 const service = {

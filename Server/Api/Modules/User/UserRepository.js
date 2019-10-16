@@ -64,7 +64,7 @@ const deleteById = async (id) => {
   return UserModel.findByIdAndDelete(id)
 }
 
-const UserRepository = {
+const repository = {
   find,
   findById,
   findByEmail,
@@ -74,4 +74,4 @@ const UserRepository = {
   deleteById
 }
 
-export default UserRepository
+export default repository

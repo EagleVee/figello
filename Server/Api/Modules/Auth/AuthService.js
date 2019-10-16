@@ -2,7 +2,9 @@ import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
 import UserRepository from '../User/UserRepository'
-import { SECRET_KEY, JWT_SECRET } from '../../../Config'
+import AccessTokenRepository from '../AccessToken/AccessTokenRepository'
+
+import { JWT_SECRET, SECRET_KEY, TOKEN_EXPIRE_MILLISECOND } from '../../../Config'
 
 const login = async (data) => {
   if (!data.email || !data.password) {
@@ -26,19 +28,9 @@ const login = async (data) => {
       expiresIn: '7 days'
     })
 
-    const refreshToken = await jwt.sign(tokenData, JWT_SECRET, {
-      expiresIn: '100 days'
-    })
-
-    const updatedUser = await UserRepository.update(existedUser.id, {
-      refresh_token: refreshToken,
-      expired_at: Date.now() / 1000 + 100 * 24 * 60 * 60
-    })
-
     return {
       user: existedUser,
-      access_token: accessToken,
-      refresh_token: refreshToken
+      access_token: accessToken
     }
   } else {
     throw new Error('WRONG PASSWORD!')
@@ -64,13 +56,14 @@ const register = async (data) => {
 const authentication = async (req, res, next) => {
   try {
     const token = req.headers.authorization
-    const data = await jwt.verify(token, SECRET_KEY)
-    if (data) {
-      if (data.exp <= Date.now() / 1000) {
-        res.status(401).send('Token expired!')
-      }
+    const accessToken = AccessTokenRepository.findByToken(token)
+    if (!accessToken) {
+      res.status(401).send('Invalid token!')
     }
-    req.user = data
+    if (accessToken.expire_at <= Date.now()) {
+      res.status(401).send('Token expired!')
+    }
+    req.user = jwt.verify(token, SECRET_KEY)
     next()
   } catch (err) {
     res.status(401).send('Unauthenticated!')
@@ -81,11 +74,34 @@ const authorization = (user, roles) => {
   return !!(user && roles.indexOf(user.role) >= 0)
 }
 
-const AuthService = {
+const validateToken = async (token) => {
+  const accessToken = await AccessTokenRepository.findByToken(token)
+  if (!accessToken) {
+    throw new Error('Invalid token!')
+  }
+  if (accessToken.expire_at <= Date.now()) {
+    return {
+      jwt_token: token,
+      is_alive: false
+    }
+  }
+
+  return {
+    jwt_token: accessToken.jwt_token,
+    is_alive: true
+  }
+}
+
+const refreshToken = async (token) => {
+  const newExpireDate = Date.now() + TOKEN_EXPIRE_MILLISECOND
+  return AccessTokenRepository.updateExpireAt(token, newExpireDate)
+}
+
+const service = {
   login,
   register,
   authentication,
   authorization
 }
 
-export default AuthService
+export default service
