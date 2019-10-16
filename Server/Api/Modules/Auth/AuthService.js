@@ -22,13 +22,23 @@ const login = async (data) => {
       role: existedUser.role
     }
 
-    const token = await jwt.sign(tokenData, JWT_SECRET, {
-      expiresIn: '30 days'
+    const accessToken = await jwt.sign(tokenData, JWT_SECRET, {
+      expiresIn: '7 days'
+    })
+
+    const refreshToken = await jwt.sign(tokenData, JWT_SECRET, {
+      expiresIn: '100 days'
+    })
+
+    const updatedUser = await UserRepository.update(existedUser.id, {
+      refresh_token: refreshToken,
+      expired_at: Date.now() / 1000 + 100 * 24 * 60 * 60
     })
 
     return {
       user: existedUser,
-      access_token: token
+      access_token: accessToken,
+      refresh_token: refreshToken
     }
   } else {
     throw new Error('WRONG PASSWORD!')
