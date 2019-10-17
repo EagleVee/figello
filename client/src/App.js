@@ -1,26 +1,14 @@
 import React from 'react'
-import logo from './Images/logo.svg'
 import './App.css'
+import HomePage from './Containers/HomePage'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
+import DetailPage from './Containers/DetailPage'
 
-function App () {
-  return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  )
-}
+const App = (
+  <Router>
+    <Route exact path='/' component={HomePage} />
+    <Route path='/detail' component={DetailPage} />
+  </Router>
+)
 
 export default App

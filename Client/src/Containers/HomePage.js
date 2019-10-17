@@ -11,6 +11,7 @@ export default class HomePage extends Component {
           <p>
             Edit <code>HomePage.js</code> and save to reload.
           </p>
+          {this.renderText()}
           <a
             className='App-link'
             href='https://reactjs.org'
@@ -21,6 +22,14 @@ export default class HomePage extends Component {
           </a>
         </header>
       </div>
+    )
+  }
+
+  renderText () {
+    return (
+      <p>
+        Lorem Ipsum generated
+      </p>
     )
   }
 }
