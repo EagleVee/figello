@@ -1,9 +1,11 @@
 import Express from 'express'
 import BodyParser from 'body-parser'
 import mongoose from 'mongoose'
-import { PORT, MONGO_CONNECTION_STRING } from './Config'
+import { MONGO_CONNECTION_STRING } from './Config'
 import UserRouter from './Api/Modules/User/UserRouter'
 import AuthRouter from './Api/Modules/Auth/AuthRouter'
+
+export const PORT = process.env.PORT || 5000
 
 mongoose.connect(MONGO_CONNECTION_STRING, { useNewUrlParser: true })
 
