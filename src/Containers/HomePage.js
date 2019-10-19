@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-// import logo from '../Images/logo.svg'
 import './Styles/HomePage.css'
+import LoginImage from '../Images/login.png'
 
 export default class HomePage extends Component {
   constructor (props) {
@@ -15,52 +15,55 @@ export default class HomePage extends Component {
     return (
       <div className='App'>
         <div className='container'>
-          <section className='register-container row'>
+          <div className='row'>
             <div className='form-container col-6'>
-              <div className='logo'>
-                {this.renderHeader()}
-                <span>Login Your Acount</span>
-              </div>
-              <div className='form-wrapper'>
-                <form>
-                  {this.renderEmail()}
-                  <div className='name-wrapper'>
-                    <div className='input-wrapper row'>
-                      <input
-                        type='email'
-                        className='col-md-10'
-                        name='email'
-                        placeholder=' &#9993; Your E-mail'
-                        onChange={this.handleEmailOnChange}
-                      />
+                    <div className='logo'>
+                      {this.renderHeader()}
+                      <span>Login To Your Account</span>
                     </div>
-                    {this.renderPassword()}
-                    <div className='input-wrapper row'>
-                      <input
-                        type='password'
-                        className='col-md-10'
-                        name='password'
-                        placeholder=' &#9999; Your Password'
-                        onChange={this.handlePasswordOnChange}
-                      />
-                    </div>
+                    <div className='form-wrapper'>
+                      <form>
+                        <div className='name-wrapper'>
+                          <p>E-mail</p>
+                          <div className='input-wrapper row'>
+                            <input
+                              type='email'
+                              className='col-md-10'
+                              name='email'
+                              placeholder='Your E-mail'
+                              onChange={this.handleEmailOnChange}
+                            />
+                          </div>
+                          <p>Password</p>
+                          <div className='input-wrapper row'>
+                            <input
+                              type='password'
+                              className='col-md-10'
+                              name='password'
+                              placeholder='Your Password'
+                              onChange={this.handlePasswordOnChange}
+                            />
+                          </div>
                   </div>
-                  <div className='form-footer'>
-                    <button>Register</button>
-                    {this.renderLoginButton()}
-                  </div>
+                  {this.renderFormFooter()}
                 </form>
               </div>
             </div>
-          </section>
+            <div className="col-6 login-image-container">
+              <img src={LoginImage} className='login-image' />
+            </div>
+          </div>
         </div>
       </div>
     )
   }
 
-  renderLoginButton () {
+  renderFormFooter () {
     return (
-      <button className='button'>Login</button>
+      <div className='form-footer'>
+        <button>Register</button>
+        <button className='button'>Login</button>
+      </div>
     )
   }
 
@@ -68,22 +71,6 @@ export default class HomePage extends Component {
     return (
       <p className='header-text'>
         START YOUR PERSIONAL PHOTO EXPIERENCE
-      </p>
-    )
-  }
-
-  renderEmail () {
-    return (
-      <p>
-        E-mail
-      </p>
-    )
-  }
-
-  renderPassword () {
-    return (
-      <p>
-        Password
       </p>
     )
   }
