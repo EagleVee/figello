@@ -3,6 +3,14 @@ import React, { Component } from 'react'
 import './Styles/HomePage.css'
 
 export default class HomePage extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      email: '',
+      password: ''
+    }
+  }
+
   render () {
     return (
       <div className='App'>
@@ -18,16 +26,28 @@ export default class HomePage extends Component {
                   {this.renderEmail()}
                   <div className='name-wrapper'>
                     <div className='input-wrapper row'>
-                      <input type='email' className='col-md-10' name='email' placeholder=' &#9993; Your E-mail' />
+                      <input
+                        type='email'
+                        className='col-md-10'
+                        name='email'
+                        placeholder=' &#9993; Your E-mail'
+                        onChange={this.handleEmailOnChange}
+                      />
                     </div>
                     {this.renderPassword()}
                     <div className='input-wrapper row'>
-                      <input type='password' className='col-md-10' name='password' placeholder=' &#9999; Your Password' />
+                      <input
+                        type='password'
+                        className='col-md-10'
+                        name='password'
+                        placeholder=' &#9999; Your Password'
+                        onChange={this.handlePasswordOnChange}
+                      />
                     </div>
                   </div>
                   <div className='form-footer'>
                     <button>Register</button>
-                    {this.renderButton()}
+                    {this.renderLoginButton()}
                   </div>
                 </form>
               </div>
@@ -38,7 +58,7 @@ export default class HomePage extends Component {
     )
   }
 
-  renderButton () {
+  renderLoginButton () {
     return (
       <button className='button'>Login</button>
     )
@@ -46,7 +66,7 @@ export default class HomePage extends Component {
 
   renderHeader () {
     return (
-      <p>
+      <p className='header-text'>
         START YOUR PERSIONAL PHOTO EXPIERENCE
       </p>
     )
@@ -66,5 +86,19 @@ export default class HomePage extends Component {
         Password
       </p>
     )
+  }
+
+  handleEmailOnChange = (event) => {
+    const value = event.target.value
+    this.setState({
+      email: value
+    })
+  }
+
+  handlePasswordOnChange = (event) => {
+    const value = event.target.value
+    this.setState({
+      password: value
+    })
   }
 }

@@ -9,7 +9,7 @@ export default class Navbar extends Component {
         <div className='container'>
           <div className='row'>
             <div className=' col-xs-12'>
-                            Wellcome Figello
+              Wellcome Figello
             </div>
           </div>
           <div className='row'>
