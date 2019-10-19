@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import logo from '../Images/logo.svg'
 import './Styles/DetailPage.css'
-import NavBar from './NavBar'
+import NavBar from '../Components/NavBar/NavBar'
 
 export default class DetailPage extends Component {
   render () {
