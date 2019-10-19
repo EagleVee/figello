@@ -7,33 +7,33 @@ export default class HomePage extends Component {
     return (
       <div className='App'>
         <div className='container'>
-        <section className='register-container row'>
-          <div className='form-container col-6'>
-            <div className='logo'>
-              {this.renderHeader()}
-              <span>Login Your Acount</span>
-            </div>
-            <div className='form-wrapper'>
-              <form>
-                {this.renderEmail()} 
-                <div className='name-wrapper'>
-                  <div className='input-wrapper row'>
-                    <input type='email' className='col-md-10'  name='email' name='lastName' placeholder=' &#9993; Your E-mail' />
+          <section className='register-container row'>
+            <div className='form-container col-6'>
+              <div className='logo'>
+                {this.renderHeader()}
+                <span>Login Your Acount</span>
+              </div>
+              <div className='form-wrapper'>
+                <form>
+                  {this.renderEmail()}
+                  <div className='name-wrapper'>
+                    <div className='input-wrapper row'>
+                      <input type='email' className='col-md-10' name='email' placeholder=' &#9993; Your E-mail' />
+                    </div>
+                    {this.renderPassword()}
+                    <div className='input-wrapper row'>
+                      <input type='password' className='col-md-10' name='password' placeholder=' &#9999; Your Password' />
+                    </div>
                   </div>
-                  {this.renderPassword()} 
-                  <div className='input-wrapper row'>
-                    <input type='password' className='col-md-10' name='password' name='lastName' placeholder=' &#9999; Your Password' />
+                  <div className='form-footer'>
+                    <button>Register</button>
+                    {this.renderButton()}
                   </div>
-                </div>
-                <div className='form-footer'>
-                  <button>Register</button>
-                  {this.renderButton()}
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
-          </div>
-        </section>
-        </div>      
+          </section>
+        </div>
       </div>
     )
   }
@@ -42,7 +42,7 @@ export default class HomePage extends Component {
     return (
       <button className='button'>Login</button>
     )
-  } 
+  }
 
   renderHeader () {
     return (
@@ -67,5 +67,4 @@ export default class HomePage extends Component {
       </p>
     )
   }
-
 }
