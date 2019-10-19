@@ -13,13 +13,13 @@ export default class DetailPage extends Component {
             <section className='register-container row'>
               <div className='form-container col-6'>
                 <div className='logo'>
-                  <span>Creat New Acount</span>
+                  <span>Creat New Account</span>
                 </div>
                 <div className='form-wrapper'>
                   <form>
                     <div className='name-wrapper'>
                       <div className='input-wrapper row'>
-                        <input type='text' className='col-md-5' name='firstName' placeholder='Fist Name' />
+                        <input type='text' className='col-md-5' name='firstName' placeholder='First Name' />
                         <input type='text' className='col-md-5 col-md-offset-5' name='lastName' placeholder='Last Name' />
                       </div>
                       <div className='input-wrapper row'>
@@ -29,7 +29,7 @@ export default class DetailPage extends Component {
                         <input type='password' className='col-md-10' name='password' placeholder='Password' />
                       </div>
                       <div className='input-wrapper row'>
-                        <input type='password' className='col-md-10' name='confimPassword' placeholder='Confim Password' />
+                        <input type='password' className='col-md-10' name='confirmPassword' placeholder='Confirm Password' />
                       </div>
                     </div>
                     <div className='form-footer'>
