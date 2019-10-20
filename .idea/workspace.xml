@@ -31,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="12" column="55" lean-forward="true" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
+            <state relative-caret-position="105">
+              <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -536,11 +536,25 @@
       <option name="project" value="LOCAL" />
       <updated>1571580993286</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="fix ssh key">
+      <created>1571581247825</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1571581247825</updated>
+    </task>
+    <task id="LOCAL-00033" summary="fix version">
+      <created>1571581402767</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1571581402767</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50976000" />
+    <option name="totallyTimeSpent" value="51376000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="713" extended-state="0" />
@@ -600,8 +614,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add babel nodemon" />
-    <MESSAGE value="add auth router" />
     <MESSAGE value="add jsonwebtoken library" />
     <MESSAGE value="add authorization and authentication" />
     <MESSAGE value="add mongo connect" />
@@ -625,7 +637,9 @@
     <MESSAGE value="fix circle ci config" />
     <MESSAGE value="fix node config" />
     <MESSAGE value="add ssh key" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ssh key" />
+    <MESSAGE value="fix ssh key" />
+    <MESSAGE value="fix version" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix version" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/standard/index.js" />
@@ -764,8 +778,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="12" column="55" lean-forward="true" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
+        <state relative-caret-position="105">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
         </state>
       </provider>
     </entry>
