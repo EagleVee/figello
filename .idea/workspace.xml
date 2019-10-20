@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1b997840-f2d1-451d-91ed-57daa6cab2c4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NavBar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavBar/NavBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Containers/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/HomePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Containers/Styles/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/Styles/HomePage.css" afterDir="false" />
     </list>
@@ -39,8 +38,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Containers/HomePage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+            <state relative-caret-position="213">
+              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Containers/Styles/HomePage.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
+            <state relative-caret-position="165">
+              <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -113,6 +115,9 @@
       <find>register</find>
       <find>register-conta</find>
       <find>First</find>
+      <find>.login</find>
+      <find>.button</find>
+      <find>background</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -498,17 +503,31 @@
       <option name="project" value="LOCAL" />
       <updated>1571503788327</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="add state username and password">
+      <created>1571504598811</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1571504598811</updated>
+    </task>
+    <task id="LOCAL-00026" summary="fix styling">
+      <created>1571508433512</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1571508433512</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43634000" />
+    <option name="totallyTimeSpent" value="47469000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="713" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -521,7 +540,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32850242" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4988086" visible="true" weight="0.3252818" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4988086" visible="true" weight="0.3252818" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50119144" side_tool="true" weight="0.3252818" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -562,8 +581,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="init server" />
-    <MESSAGE value="add project style" />
     <MESSAGE value="remove .idea from gitignore" />
     <MESSAGE value="init config" />
     <MESSAGE value="init api modules files" />
@@ -587,7 +604,9 @@
     <MESSAGE value="fix navbar" />
     <MESSAGE value="fix typo" />
     <MESSAGE value="add shadow outline" />
-    <option name="LAST_COMMIT_MESSAGE" value="add shadow outline" />
+    <MESSAGE value="add state username and password" />
+    <MESSAGE value="fix styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix styling" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/standard/index.js" />
@@ -706,15 +725,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Containers/Styles/HomePage.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
+        <state relative-caret-position="165">
+          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Containers/HomePage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+        <state relative-caret-position="213">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

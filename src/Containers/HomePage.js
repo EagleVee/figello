@@ -24,7 +24,7 @@ export default class HomePage extends Component {
                     <div className='form-wrapper'>
                       <form>
                         <div className='name-wrapper'>
-                          <p>E-mail</p>
+                          <p className='input-header text-left'>E-mail</p>
                           <div className='input-wrapper row'>
                             <input
                               type='email'
@@ -34,7 +34,7 @@ export default class HomePage extends Component {
                               onChange={this.handleEmailOnChange}
                             />
                           </div>
-                          <p>Password</p>
+                          <p className='input-header text-left'>Password</p>
                           <div className='input-wrapper row'>
                             <input
                               type='password'
