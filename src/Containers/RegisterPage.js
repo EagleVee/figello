@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 // import logo from '../Images/logo.svg'
-import './Styles/DetailPage.css'
+import './Styles/RegisterPage.css'
 import NavBar from '../Components/NavBar/NavBar'
+import LoginImage from '../Images/login.png'
 
-export default class DetailPage extends Component {
+export default class RegisterPage extends Component {
   render () {
     return (
       <div className='App'>
         <NavBar />
         <div className='container'>
           <div className='row'>
-            <section className='register-container row'>
+            <section className='row'>
               <div className='form-container col-6'>
                 <div className='logo'>
-                  <span>Creat New Account</span>
+                  <span>Create New Account</span>
                 </div>
                 <div className='form-wrapper'>
                   <form>
@@ -38,6 +39,9 @@ export default class DetailPage extends Component {
                     </div>
                   </form>
                 </div>
+              </div>
+              <div className='col-6 login-image-container'>
+                <img src={LoginImage} className='login-image' />
               </div>
             </section>
           </div>

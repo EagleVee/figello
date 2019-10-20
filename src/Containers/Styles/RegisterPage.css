@@ -23,6 +23,16 @@ input {
     margin-left: 5px;
 }
 
+.login-image-container {
+    overflow: hidden;
+}
+
+.login-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
 .register-container {
     width: 100%;
     height: 100vh;
