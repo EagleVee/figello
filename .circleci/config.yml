@@ -10,9 +10,9 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            ssh $SSH_USER@$SSH_HOST "cd '$WEB_ROOT_DEV' && git stash && git pull origin master && npm install"
+            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "cd '$WEB_ROOT_DEV' && git stash && git pull origin master && npm install"
 workflows:
-  version: 2
+  version: 2.1
   build-and-deploy:
     jobs:
       - deploy:
