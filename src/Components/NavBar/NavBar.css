@@ -1,0 +1,7 @@
+.navbar {
+    width: 30%;
+}
+
+.navbar .container .row .span {
+    margin-right: 10px;
+}

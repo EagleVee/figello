@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: 0;
+    box-shadow: 0 0 0 1px rgba(0, 123, 255, .5);
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #e9e9e9;
+    border-radius: 30px;
+    padding: 8px 5px;
+
+}
+
+.login {
+    margin-left: 5px;
+}
+
+.login-image-container {
+    overflow: hidden;
+}
+
+.login-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.register-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    background: url(../../Images/login.png) no-repeat center center;
+    background-size: cover;
+}
+
+.form-container {
+    width: 30%;
+    height: 100%;
+    background: #ffffff;
+}
+
+.logo {
+    margin-top: 20%;
+    margin-bottom: 10% ;
+    margin-right: 20%;
+}
+
+.logo span {
+    font-size: 32px;
+    color: #000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.input-wrapper {
+    margin-bottom: 10%;
+}
+
+.form-wrapper {
+    margin-left: 10%;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.form-footer button {
+    margin-left: 10%;
+    height: 30px;
+    padding-top: 1%;
+    padding-bottom: 7%;
+    padding-left: 20px ;
+    padding-right: 20px;
+    font-size: 15px;
+    border: 2px solid #4482ff;
+    color: #4482ff;
+    border-radius: 30px;
+    background: #ffffff ;
+}
+
+.form-footer button:hover {
+    background: #000000;
+}
+
+.form-footer .button {
+    background: #4482ff;
+    color: #ffffff ;
+}
+
+
+
+
+
+
+
