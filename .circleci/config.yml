@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "cd '$WEB_ROOT_DEV' && git stash && git pull origin master && npm install && pm2 start npm -- start"
+            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "cd '$WEB_ROOT_DEV' && git stash && git pull origin master && npm install"
 workflows:
   version: 2.1
   build-and-deploy:

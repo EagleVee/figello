@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 import './Styles/LoginPage.css'
 import LoginImage from '../Images/login.png'
 
@@ -58,7 +59,11 @@ export default class LoginPage extends Component {
   renderFormFooter () {
     return (
       <div className='form-footer'>
-        <button>Register</button>
+        <button>
+          <Link to="/register">
+            Register
+          </Link>
+        </button>
         <button className='button'>Login</button>
       </div>
     )
