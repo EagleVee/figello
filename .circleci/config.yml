@@ -4,9 +4,9 @@ jobs:
     docker:
       - image: circleci/node:10.16.0
     steps:
+      - checkout
       - add_ssh_keys:
             fingerprints:
-              - "90:46:d8:7f:0e:51:81:8a:4a:9b:5d:29:a6:a6:3e:12"
               - "4e:ed:9a:13:49:63:80:6d:50:79:d3:cf:85:e3:b2:0d"
       - run:
           name: Deploy Over SSH
