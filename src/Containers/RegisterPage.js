@@ -11,8 +11,8 @@ export default class RegisterPage extends Component {
         <NavBar />
         <div className='container'>
           <div className='row'>
-            <section className='row'>
-              <div className='form-container col-6'>
+            <section className='row col-12'>
+              <div className='form-container col-lg-6 col-md-12 col-sm-12'>
                 <div className='logo'>
                   <span>Create New Account</span>
                 </div>
@@ -40,8 +40,8 @@ export default class RegisterPage extends Component {
                   </form>
                 </div>
               </div>
-              <div className='col-6 login-image-container'>
-                <img src={LoginImage} className='login-image' />
+              <div className='col-6 d-sm-none d-md-none d-lg-inline login-image-container'>
+                <img src={LoginImage} className='login-image' alt='register' />
               </div>
             </section>
           </div>

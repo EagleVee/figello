@@ -48,7 +48,7 @@ export default class LoginPage extends Component {
               </div>
             </div>
             <div className="col-6 login-image-container">
-              <img src={LoginImage} className='login-image' />
+              <img src={LoginImage} className='login-image' alt='login'/>
             </div>
           </div>
         </div>
@@ -60,7 +60,9 @@ export default class LoginPage extends Component {
     return (
       <div className='form-footer'>
         <button>
-          <Link to="/register">
+          <Link
+            to='/register'
+          >
             Register
           </Link>
         </button>
