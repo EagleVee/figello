@@ -12,10 +12,7 @@ import {
 const instance = axios.create({
   baseURL: API_ENDPOINT,
   timeout: REQUEST_TIME_OUT,
-  headers: {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': '*'
-  }
+  headers: {}
 })
 
 const checkStatus = (response) => {
