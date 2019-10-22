@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Link } from "react-router-dom";
 import './Styles/LoginPage.css'
 import LoginImage from '../Images/login.png'
 
-export default class LoginPage extends Component {
+class LoginPage extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -99,3 +100,15 @@ export default class LoginPage extends Component {
     })
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)
