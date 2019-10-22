@@ -12,7 +12,10 @@ import {
 const instance = axios.create({
   baseURL: API_ENDPOINT,
   timeout: REQUEST_TIME_OUT,
-  headers: {}
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': '*'
+  }
 })
 
 const checkStatus = (response) => {
@@ -83,17 +86,14 @@ const API = {
     return GET(path + '?' + queryString)
   },
   // PUT giống post
-  postDemo: (email, password) => {
-    const path = 'demo'
+  login: (email, password) => {
+    console.log('EMAIL', email, 'PASS', password)
+    const path = '/auth/login'
     const data = {
       email: email,
       password: password
     }
     return POST(path, data, {})
-  },
-  deleteDemo: (id) => {
-    const path = `demo/${id}`
-    return DELETE(path)
   }
 }
 

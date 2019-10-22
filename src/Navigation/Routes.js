@@ -1,11 +1,11 @@
 import React from 'react'
-import { Route } from 'react-router'
-
 import LoginPage from '../Containers/LoginPage'
 import RegisterPage from '../Containers/RegisterPage'
+import {Route, BrowserRouter as Router} from 'react-router-dom'
 
 export default (
-  <Route path='/' component={LoginPage}>
-    <Route path='/detail' component={RegisterPage} />
-  </Route>
+  <Router>
+    <Route exact path='/login' component={LoginPage} />
+    <Route path='/register' component={RegisterPage} />
+  </Router>
 )

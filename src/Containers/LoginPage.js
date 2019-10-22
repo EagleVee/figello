@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 import './Styles/LoginPage.css'
 import LoginImage from '../Images/login.png'
 
+import AuthActions from '../Redux/Actions/AuthActions'
+
 class LoginPage extends Component {
   constructor (props) {
     super(props)
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      error: ''
     }
   }
 
@@ -59,7 +62,7 @@ class LoginPage extends Component {
 
   renderFormFooter () {
     return (
-      <div className='form-footer'>
+      <div className='footer'>
         <button>
           <Link
             to='/register'
@@ -67,7 +70,7 @@ class LoginPage extends Component {
             Register
           </Link>
         </button>
-        <button className='button'>Login</button>
+        <button className='button' onClick={this.handleLoginOnPress}>Login</button>
       </div>
     )
   }
@@ -99,15 +102,38 @@ class LoginPage extends Component {
       password: value
     })
   }
+
+  handleLoginOnPress = (event) => {
+    event.preventDefault()
+    this.doLogin()
+  }
+
+  doLogin = () => {
+    const { email, password } = this.state
+    const { login } = this.props
+    login(email, password)
+  }
+
+  loginOnSuccess = () => {
+    this.props.history.push('/register')
+  }
+
+  loginOnFailed = () => {
+    this.setState({
+      error: 'Some errors happened'
+    })
+  }
 }
 
 const mapStateToProps = (state) => {
   return {
+    auth: state.auth
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    login: (email, password, onSuccess, onFailed) => dispatch(AuthActions.login(email, password, onSuccess, onFailed))
   }
 }
 

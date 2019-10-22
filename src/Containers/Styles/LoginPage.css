@@ -59,12 +59,12 @@ input {
     margin-right: 10%;
 }
 
-.form-footer {
+.footer {
     display: flex;
     justify-content: flex-start;
 }
 
-.form-footer button {
+.footer button {
     margin-left: 12%;
     height: 30px;
     padding: 1% 20px 7% 20px;
@@ -75,6 +75,6 @@ input {
     background: #ffffff ;
 }
 
-.form-footer button:hover {
+.footer button:hover {
     background-color: #c4c4c4;
 }

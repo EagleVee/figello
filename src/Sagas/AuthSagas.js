@@ -3,17 +3,18 @@ import { call, put } from 'redux-saga/effects'
 import AuthActions from '../Redux/Actions/AuthActions'
 
 export function * login (action) {
-  const { phone, password, onSuccess, onFailed } = action
-  const response = yield call(API.login, phone, password)
-  if (response.status) {
-    const accessToken = response.data.access_token.jwt_token
-    // API.setAccessToken(accessToken)
-    yield call(onSuccess)
-    yield put(AuthActions.loginSuccess(response))
-  } else {
-    console.log('LOGIN FAILED')
-    yield call(onFailed, response.message)
-  }
+  const { email, password, onSuccess, onFailed } = action
+  const response = yield call(API.login, email, password)
+  console.log('RESPONSE', response)
+  // if (response.status) {
+  //   const accessToken = response.data.access_token
+  //   // API.setAccessToken(accessToken)
+  //   yield call(onSuccess)
+  //   yield put(AuthActions.loginSuccess(response))
+  // } else {
+  //   console.log('LOGIN FAILED')
+  //   yield call(onFailed, response.message)
+  // }
 }
 
 export function * phoneCheckExist (action) {

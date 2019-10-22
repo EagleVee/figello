@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import logo from '../Images/logo.svg'
+import { Link } from 'react-router-dom'
 import './Styles/RegisterPage.css'
 import NavBar from '../Components/NavBar/NavBar'
 import LoginImage from '../Images/login.png'
@@ -34,7 +34,11 @@ export default class RegisterPage extends Component {
                       </div>
                     </div>
                     <div className='form-footer'>
-                    Already have an account? <a className='login' href='#'>Login</a>
+                    Already have an account? <a className='login'>
+                      <Link to='/login'>
+                      Login
+                      </Link>
+                    </a>
                       <button className='register'>Register</button>
                     </div>
                   </form>

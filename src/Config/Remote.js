@@ -1,5 +1,5 @@
 // Sau này em sửa END POINT thành của server mình
-export const API_ENDPOINT = 'http://demo.api.com/api/'
+export const API_ENDPOINT = 'http://figello.herokuapp.com/api'
 export const REQUEST_TIME_OUT = 10000
 export const STATUS_OK = 200
 export const STATUS_BAD_REQUEST = 400

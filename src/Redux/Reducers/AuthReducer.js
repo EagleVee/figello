@@ -63,8 +63,6 @@ export const logoutTokenSuccess = (state, action) => {
 
 export const reducer = createReducer(INITIAL_STATE, {
   [AuthTypes.LOGIN_SUCCESS]: loginSuccess,
-  [AuthTypes.PHONE_CHECK_EXIST]: phoneCheckExist,
-  [AuthTypes.SEND_OTP_SUCCESS]: sendOTPSuccess,
   [AuthTypes.VALIDATE_TOKEN_SUCCESS]: validateTokenSuccess,
   [AuthTypes.REFRESH_TOKEN_SUCCESS]: refreshTokenSuccess,
   [AuthTypes.LOGOUT_TOKEN_SUCCESS]: logoutTokenSuccess,
