@@ -1,6 +1,5 @@
 import axios from 'axios'
 import * as qs from 'query-string'
-// Đây là những cái anh viết trước, syntax ES6, cứ thế mà dùng với viết theo
 
 import {
   API_ENDPOINT,
@@ -77,7 +76,6 @@ const DELETE = (url, config = {}) => {
 
 const API = {
   getDemo: (params) => {
-    // Cách xử lý query params
     const queryString = qs.stringify(params)
     const path = 'demo'
     return GET(path + '?' + queryString)
