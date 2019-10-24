@@ -73,13 +73,10 @@ input {
     justify-content: flex-start;
 }
 
-.form-footer button {
+.footer button {
     margin-left: 10%;
     height: 30px;
-    padding-top: 1%;
-    padding-bottom: 7%;
-    padding-left: 20px ;
-    padding-right: 20px;
+    padding: 1% 20px 7% 20px;
     font-size: 15px;
     border: 2px solid #4482ff;
     color: #4482ff;
@@ -87,11 +84,11 @@ input {
     background: #ffffff ;
 }
 
-.form-footer button:hover {
-    background: #000000;
+.footer button:hover {
+    background: #E2DFDE;
 }
 
-.form-footer .button {
+.footer .button {
     background: #4482ff;
     color: #ffffff ;
 }

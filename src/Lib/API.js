@@ -82,7 +82,6 @@ const API = {
   },
   // PUT giống post
   login: (email, password) => {
-    console.log('EMAIL', email, 'PASS', password)
     const path = '/auth/login'
     const data = {
       email: email,

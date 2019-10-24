@@ -21,10 +21,12 @@ class LoginPage extends Component {
       <div className='App'>
         <div className='container'>
           <div className='row'>
-            <div className='form-container col-6'>
+            <div className='form-container form-container col-lg-6 col-md-12 col-sm-12'>
               {this.renderHeader()}
               <div className='form-wrapper'>
-                <form>
+                <form
+                  onSubmit={this.handleLoginOnPress}
+                >
                   <div className='name-wrapper'>
                     <p className='input-header text-left'>E-mail</p>
                         <div className='input-wrapper row'>
@@ -51,7 +53,7 @@ class LoginPage extends Component {
                 </form>
               </div>
             </div>
-            <div className="col-6 login-image-container">
+            <div className="col-6 d-sm-none d-md-none d-lg-inline login-image-container">
               <img src={LoginImage} className='login-image' alt='login'/>
             </div>
           </div>
@@ -70,7 +72,7 @@ class LoginPage extends Component {
             Register
           </Link>
         </button>
-        <button className='button' onClick={this.handleLoginOnPress}>Login</button>
+        <button type="submit" className='button' onClick={this.handleLoginOnPress}>Login</button>
       </div>
     )
   }
@@ -111,7 +113,7 @@ class LoginPage extends Component {
   doLogin = () => {
     const { email, password } = this.state
     const { login } = this.props
-    login(email, password)
+    login(email, password, this.loginOnSuccess, this.loginOnFailed)
   }
 
   loginOnSuccess = () => {
