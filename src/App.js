@@ -9,7 +9,6 @@ const store = createStore()
 
 class App extends Component {
   render () {
-    console.log('APP')
     return (
       <Provider store={store}>
         {Routes}
