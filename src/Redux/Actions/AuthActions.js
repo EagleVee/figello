@@ -3,7 +3,7 @@ import { createActions } from 'reduxsauce'
 const { Types, Creators } = createActions({
   login: ['email', 'password', 'onSuccess', 'onFailed'],
   loginSuccess: ['response'],
-  confirmOTP: ['phone', 'otp', 'onSuccess', 'onFailed'],
+  register: ['firstName', 'lastName', 'email', 'password', 'onSuccess', 'onFailed'],
   validateToken: [],
   validateTokenSuccess: ['response'],
   me: [],

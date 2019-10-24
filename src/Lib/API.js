@@ -88,6 +88,16 @@ const API = {
       password: password
     }
     return POST(path, data, {})
+  },
+  register: (firstName, lastName, email, password) => {
+    const path = '/auth/register'
+    const data = {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      password: password
+    }
+    return POST(path, data, {})
   }
 }
 

@@ -9,7 +9,8 @@ import {
   me,
   login,
   logoutToken,
-  refreshToken
+  refreshToken,
+  register
 } from './AuthSagas'
 
 export default function * root () {
@@ -19,6 +20,7 @@ export default function * root () {
     takeLatest(AuthTypes.ME, me),
     takeLatest(AuthTypes.REFRESH_TOKEN, refreshToken),
     takeLatest(AuthTypes.LOGIN, login),
-    takeLatest(AuthTypes.LOGOUT_TOKEN, logoutToken)
+    takeLatest(AuthTypes.LOGOUT_TOKEN, logoutToken),
+    takeLatest(AuthTypes.REGISTER, register)
   ])
 }
