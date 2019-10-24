@@ -117,7 +117,6 @@ class LoginPage extends Component {
   }
 
   loginOnSuccess = () => {
-    console.log('LOGIN SUCCESS')
     this.props.history.push('/register')
   }
 
