@@ -23,11 +23,13 @@ class LoginPage extends Component {
         <NavBar />
         <div className='container'>
           <div className='row'>
-            <div className='form-container form-container col-lg-6 col-md-12 col-sm-12'>
+            <div
+              className='form-container form-container col-lg-6 col-md-12 col-sm-12'
+            >
               {this.renderHeader()}
               <div className='form-wrapper'>
                 <form
-                  onSubmit={this.handleLoginOnPress}
+                  onSubmit={this.loginOnSubmit}
                 >
                   <div className='name-wrapper'>
                     <p className='input-header text-left'>E-mail</p>
@@ -55,7 +57,9 @@ class LoginPage extends Component {
                 </form>
               </div>
             </div>
-            <div className="col-6 d-sm-none d-md-none d-lg-inline login-image-container">
+            <div
+              className="col-6 d-sm-none d-md-none d-lg-inline login-image-container"
+            >
               <img src={LoginImage} className='login-image' alt='login'/>
             </div>
           </div>
@@ -74,7 +78,7 @@ class LoginPage extends Component {
             Register
           </Link>
         </button>
-        <button type="submit" className='button' onClick={this.handleLoginOnPress}>Login</button>
+        <button type="submit" className='button' onClick={this.loginOnSubmit}>Login</button>
       </div>
     )
   }
@@ -107,7 +111,7 @@ class LoginPage extends Component {
     })
   }
 
-  handleLoginOnPress = (event) => {
+  loginOnSubmit = (event) => {
     event.preventDefault()
     this.doLogin()
   }
