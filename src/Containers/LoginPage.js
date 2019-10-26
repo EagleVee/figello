@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from "react-router-dom";
 import './Styles/LoginPage.css'
 import LoginImage from '../Images/login.png'
+import NavBar from '../Components/NavBar/NavBar'
 
 import AuthActions from '../Redux/Actions/AuthActions'
 
@@ -19,6 +20,7 @@ class LoginPage extends Component {
   render () {
     return (
       <div className='App'>
+        <NavBar />
         <div className='container'>
           <div className='row'>
             <div className='form-container form-container col-lg-6 col-md-12 col-sm-12'>

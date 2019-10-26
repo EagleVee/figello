@@ -38,7 +38,7 @@ input {
     height: 100vh;
     display: flex;
     justify-content: flex-start;
-    background: url(../../Images/login.png) no-repeat center center;
+    /* background: url(../../Images/login.png) no-repeat center center; */
     background-size: cover;
 }
 
