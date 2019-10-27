@@ -4,8 +4,8 @@ import React, { Component } from 'react'
 export default class SearchField extends Component {
   render () {
     return (
-      <form className='col-5'>
-          <input className='form-control' type='text' placeholder='Search' />
+      <form className='col-12'>
+        <input className='form-control' type='text' placeholder='Search' />
       </form>
     )
   }

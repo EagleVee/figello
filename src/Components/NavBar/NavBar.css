@@ -1,11 +1,12 @@
 .navbar {
     background: #F0FFFF;
+    min-height: 30px;
 }
 
 .navbar .container span {
     margin-left: 10%;
     font-size: 21px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Arial, sans-serif;
 } 
 
 .navbar .container span:hover {
@@ -16,11 +17,10 @@
 
 
 .home-nav button {
-    width: 50px;
-    height: 38px;
+    padding: 2px 4px;
     font-size: 15px;
     background: #F0FFFF;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 .home-nav button:hover {

@@ -23,12 +23,11 @@ class Homepage extends Component {
 
   renderButton () {
     return (
-      <div className='home-button'>
-        <button>
-          <Link to='/login'>
+      <div className='home-button-container'>
+        <button className='home-button'>
+          <Link to='/login' className='home-button-text'>
             GET STARTED
           </Link>
-
         </button>
       </div>
     )

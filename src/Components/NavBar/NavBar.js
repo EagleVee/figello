@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import logo from '../Images/logo.svg'
+import logo from '../../Images/avatar.jpg'
 import './NavBar.css'
 import SearchField from './SearchField'
 import Home from './Home'
@@ -10,10 +10,12 @@ export default class Navbar extends Component {
     return (
       <div className='navbar'>
         <div className='container'>
-          <div className='row col-6'>
-            <Home />
-            <NavBoard />
-            <SearchField />   
+          <div className='row col-8 align-items-center'>
+            {this.renderHomeButton()}
+            {this.renderNavBoard()}
+            <div className='search-field-container col-6'>
+              <SearchField />
+            </div>
             {this.renderLogo()}
           </div>
           <div className='row'>
@@ -23,16 +25,36 @@ export default class Navbar extends Component {
       </div>
     )
   }
+
+  renderHomeButton () {
+    return (
+      <div className='home-nav col-1 text-center'>
+        <button className='home-nav-button'>Home</button>
+      </div>
+    )
+  }
+
+  renderNavBoard () {
+    return (
+      <div className='home-nav col-1 text-center'>
+        <button className='home-nav-button'>Board</button>
+      </div>
+    )
+  }
+
   renderLogo () {
     return (
-      <span>FIGELLO</span>
+      <div className='home-nav col-1 text-center'>
+        <button>FIGELLO</button>
+      </div>
+
     )
   }
 
   renderAvatar () {
-    return(
+    return (
       <div className='image-wrapper col-2'>
-        <img src='avatar.jpg'/>
+        <img src={logo} />
       </div>
     )
   }

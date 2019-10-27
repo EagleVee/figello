@@ -5,7 +5,7 @@ export default class Home extends Component {
   render () {
     return (
       <form className=' home-nav col-2'>
-          <button>Home</button>
+        <button>Home</button>
       </form>
     )
   }
