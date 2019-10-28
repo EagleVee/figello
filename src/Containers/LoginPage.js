@@ -41,37 +41,33 @@ class LoginPage extends Component {
         className='align-self-center col-lg-6 col-md-12 col-sm-12'
       >
         <div className='col-12'>
-          <p className='header-text text-left'>
+          <h4 className='header-text text-left'>
             START YOUR PERSONAL TEAMWORK EXPERIENCE
-          </p>
-          <p className='header-main-text text-left'>
+          </h4>
+          <h2 className='header-main-text text-left'>
             Login To Your Account
-          </p>
+          </h2>
         </div>
           <form
             onSubmit={this.loginOnSubmit}
           >
             <div className=''>
               <p className='input-header text-left'>E-mail</p>
-              <div className='input-wrapper row'>
                 <input
                   type='email'
-                  className='login-input col-md-10'
+                  className='mb-3 login-input col-md-10'
                   name='email'
                   placeholder='Your E-mail'
                   onChange={this.handleEmailOnChange}
                 />
-              </div>
               <p className='input-header text-left'>Password</p>
-              <div className='input-wrapper row'>
                 <input
                   type='password'
-                  className='login-input col-md-10'
+                  className='mb-3 login-input col-md-10'
                   name='password'
                   placeholder='Your Password'
                   onChange={this.handlePasswordOnChange}
                 />
-              </div>
             </div>
             {this.renderFormFooter()}
           </form>
@@ -81,19 +77,23 @@ class LoginPage extends Component {
 
   renderFormFooter () {
     return (
-      <div className='footer'>
+      <div className='footer row'>
+        <div className='col-5 text-left'>
           <Link
             className='btn btn-outline-primary btn-white footer-btn'
             to='/register'
           >
             Register
           </Link>
+        </div>
+        <div className='col-5 text-right'>
         <button
           type='submit'
           className='btn btn-primary footer-btn'
           onClick={this.loginOnSubmit}>
           Login
         </button>
+        </div>
       </div>
     )
   }
