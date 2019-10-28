@@ -1,60 +1,44 @@
 import React, { Component } from 'react'
-import logo from '../../Images/avatar.jpg'
+import PropTypes from 'prop-types'
 import './NavBar.css'
-import SearchField from './SearchField'
-import Home from './Home'
-import NavBoard from './NavBoard'
+import { Link } from 'react-router-dom'
 
 export default class Navbar extends Component {
   render () {
     return (
-      <div className='navbar'>
-        <div className='container'>
-          <div className='row col-8 align-items-center'>
-            {this.renderHomeButton()}
-            {this.renderNavBoard()}
-            <div className='search-field-container col-6'>
-              <SearchField />
-            </div>
-            {this.renderLogo()}
-          </div>
-          <div className='row'>
-            {this.renderAvatar()}
-          </div>
+      <nav className='navbar navbar-expand-md navbar-dark bg-dark fixed-top'>
+        <Link to='/' className='text-white navbar-brand' href='#'>
+          <i className='fa fa-home' />
+        </Link>
+        <button
+          className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent'
+          aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'
+        >
+          <span className='navbar-toggler-icon' />
+        </button>
+
+        <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+          <ul className='navbar-nav mr-auto'>
+            <li className='nav-item active'>
+              <Link to='/board' className='nav-link' href='#'>Board</Link>
+            </li>
+            <li className='nav-item active'>
+              <Link to='/board' className='nav-link' href='#'>Figello</Link>
+            </li>
+          </ul>
         </div>
-      </div>
+        {this.renderRightNavBar()}
+      </nav>
     )
   }
 
-  renderHomeButton () {
-    return (
-      <div className='home-nav col-1 text-center'>
-        <button className='home-nav-button'>Home</button>
-      </div>
-    )
-  }
-
-  renderNavBoard () {
-    return (
-      <div className='home-nav col-1 text-center'>
-        <button className='home-nav-button'>Board</button>
-      </div>
-    )
-  }
-
-  renderLogo () {
-    return (
-      <div className='home-nav col-1 text-center'>
-        <button>FIGELLO</button>
-      </div>
-
-    )
-  }
-
-  renderAvatar () {
-    return (
-      <div className='image-wrapper col-2'>
-        <img src={logo} />
+  renderRightNavBar () {
+    const isAuthenticated = false
+    return (isAuthenticated
+      ? <div />
+      : <div className='my-2 my-lg-0'>
+        <Link to='/login' className='btn btn-light mr-2'>Login</Link>
+        <Link to='/register' className='btn btn-outline-light btn-dark'>Register</Link>
       </div>
     )
   }

@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import './Styles/RegisterPage.css'
 import NavBar from '../Components/NavBar/NavBar'
 import LoginImage from '../Images/login.png'
@@ -7,7 +7,7 @@ import AuthActions from '../Redux/Actions/AuthActions'
 import {connect} from 'react-redux'
 
 class RegisterPage extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       firstName: '',
@@ -18,98 +18,94 @@ class RegisterPage extends Component {
       error: ''
     }
   }
-  render () {
+
+  render() {
     return (
-      <div className='App'>
-        <NavBar />
+      <div>
+        <NavBar/>
         <div className='container'>
-          <div className='row'>
-            <section className='row col-12'>
-              <div className='form-container col-lg-6 col-md-12 col-sm-12'>
-                <div className='logo'>
-                  <span>Create New Account</span>
-                </div>
-                <div className='form-wrapper'>
-                  <form
-                    onSubmit={this.onSubmit}
-                  >
-                    <div className='name-wrapper'>
-                      <div className='input-wrapper row'>
-                        <input
-                          type='text'
-                          className='col-md-5'
-                          name='firstName'
-                          placeholder='First Name'
-                          onChange={(event) => {
-                            this.onTextChange(event, 'firstName')
-                          }}
-                        />
-                        <input
-                          type='text'
-                          className='col-md-5 col-md-offset-5'
-                          name='lastName'
-                          placeholder='Last Name'
-                          onChange={(event) => {
-                            this.onTextChange(event, 'lastName')
-                          }}
-                        />
-                      </div>
-                      <div className='input-wrapper row'>
-                        <input
-                          type='email'
-                          className='col-md-10'
-                          name='email'
-                          placeholder='Email'
-                          onChange={(event) => {
-                            this.onTextChange(event, 'email')
-                          }}
-                        />
-                      </div>
-                      <div className='input-wrapper row'>
-                        <input
-                          type='password'
-                          className='col-md-10'
-                          name='password'
-                          placeholder='Password'
-                          onChange={(event) => {
-                            this.onTextChange(event, 'password')
-                          }}
-                        />
-                      </div>
-                      <div className='input-wrapper row'>
-                        <input
-                          type='password'
-                          className='col-md-10'
-                          name='confirmPassword'
-                          placeholder='Confirm Password'
-                          onChange={(event) => {
-                            this.onTextChange(event, 'confirmPassword')
-                          }}
-                        />
-                      </div>
-                    </div>
-                    <div className='footer'>
-                    Already have an account?
-                      <Link className="login" to='/login'>
-                      Login
-                      </Link>
-                      <button
-                        className='register'
-                        type="submit"
-                        onSubmit={this.onSubmit}
-                      >
-                        Register
-                      </button>
-                    </div>
-                  </form>
-                </div>
+          <div className='row col-12'>
+            <div className='form-container col-lg-6 col-md-12 col-sm-12 align-self-center text-center'>
+              <div>
+                <h2 className='mb-5'>Create New Account</h2>
               </div>
-              <div className='col-6 d-sm-none d-md-none d-lg-inline login-image-container'>
-                <img src={LoginImage} className='login-image' alt='register' />
-              </div>
-            </section>
+              {this.renderForm()}
+            </div>
+            <div className='align-self-center col-6 d-sm-none d-md-none d-lg-inline login-image-container'>
+              <img src={LoginImage} className='login-image' alt='register'/>
+            </div>
           </div>
         </div>
+      </div>
+    )
+  }
+
+  renderForm() {
+    return (
+      <div className='text-center'>
+        <form
+          className='text-center'
+          onSubmit={this.onSubmit}
+        >
+          <input
+            type='text'
+            className='mb-3 login-input col-10 mr-1'
+            name='firstName'
+            placeholder='First Name'
+            onChange={(event) => {
+              this.onTextChange(event, 'firstName')
+            }}
+          />
+          <input
+            type='text'
+            className='mb-3 login-input col-10'
+            name='lastName'
+            placeholder='Last Name'
+            onChange={(event) => {
+              this.onTextChange(event, 'lastName')
+            }}
+          />
+          <input
+            type='email'
+            className='mb-3 login-input col-10'
+            name='email'
+            placeholder='Email'
+            onChange={(event) => {
+              this.onTextChange(event, 'email')
+            }}
+          />
+          <input
+            type='password'
+            className='mb-3 login-input col-10'
+            name='password'
+            placeholder='Password'
+            onChange={(event) => {
+              this.onTextChange(event, 'password')
+            }}
+          />
+          <input
+            type='password'
+            className='mb-3 login-input col-10'
+            name='confirmPassword'
+            placeholder='Confirm Password'
+            onChange={(event) => {
+              this.onTextChange(event, 'confirmPassword')
+            }}
+          />
+          <div className='footer text-center'>
+            Already have an account?&nbsp;
+            <Link className="login" to='/login'>
+              Login
+            </Link>
+            <button
+              className='btn btn-outline-primary footer-btn ml-2'
+              type="submit"
+              onSubmit={this.onSubmit}
+            >
+              Register
+            </button>
+          </div>
+        </form>
       </div>
     )
   }
@@ -123,7 +119,7 @@ class RegisterPage extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
-    const { password, confirmedPassword } = this.state
+    const {password, confirmedPassword} = this.state
     if (!password === confirmedPassword) {
       this.setState({
         error: 'Password and confirmed password are not match'
@@ -134,8 +130,8 @@ class RegisterPage extends Component {
   }
 
   doRegister = () => {
-    const { register } = this.props
-    const { firstName, lastName, email, password } = this.state
+    const {register} = this.props
+    const {firstName, lastName, email, password} = this.state
     register(firstName, lastName, email, password, this.registerOnSuccess, this.registerOnFailed)
   }
 

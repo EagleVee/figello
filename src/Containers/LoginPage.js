@@ -19,46 +19,13 @@ class LoginPage extends Component {
 
   render () {
     return (
-      <div className='App'>
+      <div>
         <NavBar />
         <div className='container'>
           <div className='row'>
+            {this.renderForm()}
             <div
-              className='form-container form-container col-lg-6 col-md-12 col-sm-12'
-            >
-              {this.renderHeader()}
-              <div className='form-wrapper'>
-                <form
-                  onSubmit={this.loginOnSubmit}
-                >
-                  <div className='name-wrapper'>
-                    <p className='input-header text-left'>E-mail</p>
-                        <div className='input-wrapper row'>
-                          <input
-                            type='email'
-                            className='col-md-10'
-                            name='email'
-                            placeholder='Your E-mail'
-                            onChange={this.handleEmailOnChange}
-                          />
-                        </div>
-                        <p className='input-header text-left'>Password</p>
-                        <div className='input-wrapper row'>
-                          <input
-                            type='password'
-                            className='col-md-10'
-                            name='password'
-                            placeholder='Your Password'
-                            onChange={this.handlePasswordOnChange}
-                          />
-                        </div>
-                  </div>
-                  {this.renderFormFooter()}
-                </form>
-              </div>
-            </div>
-            <div
-              className="col-6 d-sm-none d-md-none d-lg-inline login-image-container"
+              className="align-self-center col-6 d-sm-none d-md-none d-lg-inline overflow-hidden"
             >
               <img src={LoginImage} className='login-image' alt='login'/>
             </div>
@@ -68,32 +35,66 @@ class LoginPage extends Component {
     )
   }
 
+  renderForm () {
+    return (
+      <div
+        className='align-self-center col-lg-6 col-md-12 col-sm-12'
+      >
+        <div className='col-12'>
+          <p className='header-text text-left'>
+            START YOUR PERSONAL TEAMWORK EXPERIENCE
+          </p>
+          <p className='header-main-text text-left'>
+            Login To Your Account
+          </p>
+        </div>
+          <form
+            onSubmit={this.loginOnSubmit}
+          >
+            <div className=''>
+              <p className='input-header text-left'>E-mail</p>
+              <div className='input-wrapper row'>
+                <input
+                  type='email'
+                  className='login-input col-md-10'
+                  name='email'
+                  placeholder='Your E-mail'
+                  onChange={this.handleEmailOnChange}
+                />
+              </div>
+              <p className='input-header text-left'>Password</p>
+              <div className='input-wrapper row'>
+                <input
+                  type='password'
+                  className='login-input col-md-10'
+                  name='password'
+                  placeholder='Your Password'
+                  onChange={this.handlePasswordOnChange}
+                />
+              </div>
+            </div>
+            {this.renderFormFooter()}
+          </form>
+        </div>
+    )
+  }
+
   renderFormFooter () {
     return (
       <div className='footer'>
-        <button>
           <Link
+            className='btn btn-outline-primary btn-white footer-btn'
             to='/register'
           >
             Register
           </Link>
+        <button
+          type='submit'
+          className='btn btn-primary footer-btn'
+          onClick={this.loginOnSubmit}>
+          Login
         </button>
-        <button type="submit" className='button' onClick={this.loginOnSubmit}>Login</button>
       </div>
-    )
-  }
-
-  renderHeader () {
-    return (
-      <div className='logo col-12'>
-        <p className='header-text text-left'>
-          START YOUR PERSONAL TEAMWORK EXPERIENCE
-        </p>
-        <p className='header-main-text text-left'>
-          Login To Your Account
-        </p>
-      </div>
-
     )
   }
 

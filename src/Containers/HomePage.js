@@ -7,29 +7,19 @@ import { connect } from 'react-redux'
 class Homepage extends Component {
   render () {
     return (
-      <div className='App'>
+      <div>
         <NavBar />
-        <div className='home-image'>
-          <div className='home-text'>
-            <h1>WELCOME TO FIGELLO</h1>
-            <h4>START YOUR PERSONAL TEAMWORK EXPERIENCE</h4>
-            {this.renderButton()}
+        <div className='home-header text-center row'>
+          <div className='align-self-center col-12'>
+            <h1 className='welcome text-white'>WELCOME TO FIGELLO</h1>
+            <h4 className='slogan text-white mt-2'>START YOUR PERSONAL TEAMWORK EXPERIENCE</h4>
+            <Link to='/login' className='get-started btn btn-light text-dark mt-5'>
+              GET STARTED
+            </Link>
           </div>
         </div>
       </div>
 
-    )
-  }
-
-  renderButton () {
-    return (
-      <div className='home-button-container'>
-        <button className='home-button'>
-          <Link to='/login' className='home-button-text'>
-            GET STARTED
-          </Link>
-        </button>
-      </div>
     )
   }
 }
