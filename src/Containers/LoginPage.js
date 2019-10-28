@@ -52,7 +52,7 @@ class LoginPage extends Component {
             onSubmit={this.loginOnSubmit}
           >
             <div className=''>
-              <p className='input-header text-left'>E-mail</p>
+              <p className='p-2 text-left'>E-mail</p>
                 <input
                   type='email'
                   className='mb-3 login-input col-md-10'
