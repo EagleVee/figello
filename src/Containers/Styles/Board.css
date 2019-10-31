@@ -1,0 +1,40 @@
+.wrapper {
+  margin-top: 60px;
+}
+
+.card-container {
+  margin-top: 18px;
+}
+
+.card {
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.card.card-light:hover {
+  -webkit-filter: brightness(120%); /* Safari 6.0 - 9.0 */
+  filter: brightness(120%);
+}
+
+.headline {
+  display: inline-block;
+  padding-top: 20px;
+}
+
+.ant-card-meta-title {
+  color: white;
+}
+
+.ant-card-meta-description {
+  color: #e6d8d8;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.horizontal-center {
+  display: flex;
+  justify-content: center;
+}
