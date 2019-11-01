@@ -1,0 +1,28 @@
+.card-item-wrapper {
+  padding: 6px 8px 2px;
+  background: white;
+  border-radius: 3px;
+  margin: 10px;
+  box-shadow: 0 1px 0 rgba(9,30,66,.25);
+  min-height: 25px;
+}
+
+.card-label {
+  float: left;
+  font-size: 12px;
+  font-weight: 700;
+  height: 8px;
+  line-height: 100px;
+  margin: 0 4px 4px 0;
+  max-width: 40px;
+  min-width: 40px;
+  padding: 0;
+  text-shadow: none;
+  width: auto;
+  background-color: green;
+}
+
+.card-label-wrapper {
+  overflow: auto;
+  position: relative
+}

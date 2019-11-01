@@ -6,7 +6,7 @@ import NavBar from "../Components/NavBar/NavBar";
 import { connect } from "react-redux";
 import { Card, Avatar } from "antd";
 
-class Board extends Component {
+class BoardScreen extends Component {
   state = {
     data: ['brown', '#a77858', 'blue', 'green', 'purple', 'orange', '#af3990']
   };
@@ -20,15 +20,17 @@ class Board extends Component {
             <h3 className="headline">Personal boards</h3>
           </div>
           <div className="row">
-            {this.state.data.map(val => {
+            {this.state.data.map((val) => {
               return (
                 <div className="col-lg-3 col-md-4 col-sm-6 card-container">
-                  <Card className='card card-light' loading={false} style={{backgroundColor: val}}>
-                    <Card.Meta
-                      title="Card title"
-                      description="This is the description"
-                    />
-                  </Card>
+                  <Link to={`/board-item/1`}>
+                    <Card className='card card-light' loading={false} style={{backgroundColor: val}}>
+                      <Card.Meta
+                        title="Card title"
+                        description="This is the description"
+                      />
+                    </Card>
+                  </Link>
                 </div>
               );
             })}
@@ -57,4 +59,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Board);
+)(BoardScreen);

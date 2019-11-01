@@ -1,0 +1,33 @@
+.wrapper-table {
+  width: 250px;
+  text-align: left;
+  padding: 10px;
+  background-color: #ebecf0;
+  border-radius: 3px;
+  margin: 0px 15px;
+}
+.wrapper-leads {
+  height: 650px;
+  overflow: scroll;
+  padding: 0px 7px 0px 7px;
+  border-top: 0.5px solid rgba(186, 186, 186, 0.5);
+  border-bottom: 0.5px solid rgba(186, 186, 186, 0.5);
+  border-left: 0.5px solid rgba(186, 186, 186, 0.5);
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+.information-stage {
+  font-weight: 800;
+}
+
+.add-wrapper {
+  color: #888;
+  padding: 10px;
+}
+
+.add-wrapper:hover {
+  background-color: rgba(9,30,66,.08);
+  color: #172b4d;
+  cursor: pointer;
+}
