@@ -7,19 +7,22 @@ import { Link } from 'react-router-dom'
 const { SubMenu } = Menu
 
 export default class NavBarAntd extends Component {
+  static propTypes = {
+    itemOnClick: PropTypes.func.isRequired
+  }
   render () {
     return (
       <Menu
         theme='dark'
         style={{ height: '10vh', display: 'flex', alignItems: 'center'}}
-        onClick={this.itemOnClick}
+        onClick={this.props.itemOnClick}
         mode='horizontal'>
         <Menu.Item key='mail'>
-          <Icon type='mail' />
+          <Icon type="login" />
           Navigation One
         </Menu.Item>
         <Menu.Item key='app' disabled>
-          <Icon type='appstore' />
+          <Icon type="play-circle" />
           Navigation Two
         </Menu.Item>
         <SubMenu
@@ -46,9 +49,5 @@ export default class NavBarAntd extends Component {
         </Menu.Item>
       </Menu>
     )
-  }
-
-  itemOnClick = ({ key }) => {
-    this.props.history.push('/' + key)
   }
 }

@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './Styles/HomePage.css'
-import { Layout } from 'antd'
-import NavBar from '../Components/NavBar/NavBar'
-import NavBarAntd from '../Components/NavBar/NavBarAntd'
 import Container from '../Components/Container'
 import { connect } from 'react-redux'
-const { Header, Content } = Layout
 class Homepage extends Component {
   render () {
     return (
-      <Container>
+      <Container
+        menuOnClick={this.menuOnClick}
+      >
         <div className='home-header text-center row'>
           <div className='align-self-center col-12'>
             <h1 className='welcome text-white'>WELCOME TO FIGELLO</h1>
@@ -23,6 +21,10 @@ class Homepage extends Component {
       </Container>
 
     )
+  }
+
+  menuOnClick = ({ key }) => {
+    this.props.history.push('/' + key)
   }
 }
 
