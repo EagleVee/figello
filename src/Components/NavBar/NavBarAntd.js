@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Menu, Icon } from 'antd'
+import { Menu, Icon, Input } from 'antd'
 import './NavBar.css'
 import { Link } from 'react-router-dom'
 import Avatar from '../../Images/avatar.jpg' 
@@ -27,17 +27,14 @@ export default class NavBarAntd extends Component {
           <Icon type='carry-out' />
           Board
         </Menu.Item>
-        
-        <Menu.Item key='alipay'>
-          <Link to='/' target='_blank' rel='noopener noreferrer'>
-            Navigation Four - Link
-          </Link>
-        </Menu.Item>
+        <SubMenu>
+          <Input.Search className='bg-light' placeholder="input search text" onSearch={value => console.log(value)} enterButton />
+        </SubMenu>
         <SubMenu
           style = {style.rightSubMenu}
           title={
             <span style={style.menuItem}>
-            <img src={Avatar} style={style.avatar}  />
+              <img src={Avatar} style={style.avatar}/>
             </span>
           }
         >
@@ -64,8 +61,8 @@ const style = {
     justifyContent: 'flex-end'
   },
   avatar: {
-    height: 40,
     width: 40,
-    borderRadius: '50%'
+    height: 40,
+    borderRadius: '50%',
   }
 }
