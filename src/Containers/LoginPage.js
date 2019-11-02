@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { Link } from "react-router-dom";
 import './Styles/LoginPage.css'
 import LoginImage from '../Images/login.png'
-import NavBar from '../Components/NavBar/NavBar'
 import AuthActions from '../Redux/Actions/AuthActions'
 import Container from "../Components/Container"
 

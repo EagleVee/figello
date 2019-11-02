@@ -2,18 +2,16 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "antd/dist/antd.css";
 import "./Styles/Board.css";
-import NavBar from "../Components/NavBar/NavBar";
 import { connect } from "react-redux";
 import { Card, Avatar } from "antd";
-
+import Container from '../Components/Container'
 class BoardScreen extends Component {
   state = {
     data: ['brown', '#a77858', 'blue', 'green', 'purple', 'orange', '#af3990']
   };
   render() {
     return (
-      <div>
-        <NavBar />
+      <Container>
         <div className="container wrapper">
           <div className="header">
             <i className='fa fa-user fa-2x mr-3' />
@@ -43,7 +41,7 @@ class BoardScreen extends Component {
             </div>
           </div>
         </div>
-      </div>
+        </Container>
     );
   }
 }

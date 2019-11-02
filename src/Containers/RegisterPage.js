@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import './Styles/RegisterPage.css'
-import NavBar from '../Components/NavBar/NavBar'
 import LoginImage from '../Images/login.png'
 import AuthActions from '../Redux/Actions/AuthActions'
 import {connect} from 'react-redux'
