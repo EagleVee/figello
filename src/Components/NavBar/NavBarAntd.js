@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Menu, Icon } from 'antd'
-import './NavBar.css'
 import { Link } from 'react-router-dom'
 
 const { SubMenu } = Menu

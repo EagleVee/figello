@@ -6,7 +6,7 @@ export default class Container extends Component {
   render () {
     return (
       <Layout>
-        <Header className='fixed-top'>
+        <Header className='fixed-top' style={{ height: '10vh' }}>
           <NavBarAntd />
         </Header>
         <Content>

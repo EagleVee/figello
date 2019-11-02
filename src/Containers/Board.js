@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "antd/dist/antd.css";
 import "./Styles/Board.css";
-import NavBar from "../Components/NavBar/NavBar";
 import ColumnList from "../Components/ColumnList/ColumnList";
 import { connect } from "react-redux";
+import Container from "../Components/Container";
 
 class Board extends Component {
   state = {
@@ -30,8 +30,8 @@ class Board extends Component {
   };
   render() {
     return (
+      <Container>
       <div className='main-background'>
-        <NavBar />
         <div className="wrapper pl-3 pr-3">
           <div className="row">
             <ColumnList
@@ -39,7 +39,8 @@ class Board extends Component {
             />
           </div>
         </div>
-      </div>
+        </div>
+        </Container>
     );
   }
 }
