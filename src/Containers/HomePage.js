@@ -9,7 +9,8 @@ class Homepage extends Component {
     return (
       <Container
         menuOnClick={({ key }) => {
-          this.props.history.push('/' + key)}}
+          this.props.history.push('/' + key)
+        }}
       >
         <div className='home-header text-center row'>
           <div className='align-self-center col-12'>
