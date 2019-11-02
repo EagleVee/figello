@@ -16,11 +16,11 @@ export default class NavBarAntd extends Component {
         style={{ height: '10vh', display: 'flex', alignItems: 'center'}}
         onClick={this.props.itemOnClick}
         mode='horizontal'>
-        <Menu.Item key='mail'>
+        <Menu.Item key='login'>
           <Icon type="login" />
           Navigation One
         </Menu.Item>
-        <Menu.Item key='app' disabled>
+        <Menu.Item key='register'>
           <Icon type="play-circle" />
           Navigation Two
         </Menu.Item>

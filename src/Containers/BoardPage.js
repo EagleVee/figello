@@ -7,7 +7,10 @@ import { connect } from 'react-redux'
 class BoardPage extends Component {
   render () {
     return (
-      <Container>
+      <Container
+        menuOnClick={({ key }) => {
+          this.props.history.push('/' + key)}}
+      >
         <div className='home-header text-center row'>
           <div className='align-self-center col-12'>
             <h1 className='welcome text-white'>WELCOME TO FIGELLO</h1>

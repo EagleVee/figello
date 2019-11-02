@@ -11,7 +11,10 @@ class BoardScreen extends Component {
   };
   render() {
     return (
-      <Container>
+      <Container
+        menuOnClick={({ key }) => {
+          this.props.history.push('/' + key)}}
+      >
         <div className="container wrapper">
           <div className="header">
             <i className='fa fa-user fa-2x mr-3' />

@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom'
 import './Styles/HomePage.css'
 import Container from '../Components/Container'
 import { connect } from 'react-redux'
+
 class Homepage extends Component {
   render () {
     return (
       <Container
-        menuOnClick={this.menuOnClick}
+        menuOnClick={({ key }) => {
+          this.props.history.push('/' + key)}}
       >
         <div className='home-header text-center row'>
           <div className='align-self-center col-12'>

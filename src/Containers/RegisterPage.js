@@ -21,7 +21,10 @@ class RegisterPage extends Component {
 
   render() {
     return (
-      <Container>
+      <Container
+        menuOnClick={({ key }) => {
+          this.props.history.push('/' + key)}}
+      >
         <div className='container'>
           <div className='row'>
             {this.renderForm()}

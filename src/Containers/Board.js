@@ -30,7 +30,10 @@ class Board extends Component {
   };
   render() {
     return (
-      <Container>
+      <Container
+        menuOnClick={({ key }) => {
+          this.props.history.push('/' + key)}}
+      >
       <div className='main-background'>
         <div className="wrapper pl-3 pr-3">
           <div className="row">
