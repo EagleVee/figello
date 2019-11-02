@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import './Styles/LoginPage.css'
 import LoginImage from '../Images/login.png'
 import NavBar from '../Components/NavBar/NavBar'
-
 import AuthActions from '../Redux/Actions/AuthActions'
+import Container from "../Components/Container"
 
 class LoginPage extends Component {
   constructor (props) {
@@ -19,8 +19,7 @@ class LoginPage extends Component {
 
   render () {
     return (
-      <div>
-        <NavBar />
+      <Container>
         <div className='container'>
           <div className='row'>
             {this.renderForm()}
@@ -31,7 +30,7 @@ class LoginPage extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     )
   }
 

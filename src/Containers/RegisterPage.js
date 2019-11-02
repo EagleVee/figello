@@ -5,6 +5,7 @@ import NavBar from '../Components/NavBar/NavBar'
 import LoginImage from '../Images/login.png'
 import AuthActions from '../Redux/Actions/AuthActions'
 import {connect} from 'react-redux'
+import Container from "../Components/Container";
 
 class RegisterPage extends Component {
   constructor(props) {
@@ -21,9 +22,8 @@ class RegisterPage extends Component {
 
   render() {
     return (
-      <div>
-        <NavBar/>
-        <div className='container '>
+      <Container>
+        <div className='container'>
           <div className='row'>
             {this.renderForm()}
             <div className='align-self-center col-6 d-sm-none d-md-none d-lg-inline overflow-hidden'>
@@ -31,7 +31,7 @@ class RegisterPage extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     )
   }
 
