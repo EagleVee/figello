@@ -75,10 +75,8 @@ const DELETE = (url, config = {}) => {
 }
 
 const API = {
-  getDemo: (params) => {
-    const queryString = qs.stringify(params)
-    const path = 'demo'
-    return GET(path + '?' + queryString)
+  setAccessToken: (accessToken) => {
+    instance.defaults.headers.common.Authorization = accessToken
   },
   // PUT giống post
   login: (email, password) => {
