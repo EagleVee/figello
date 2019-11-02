@@ -138,7 +138,7 @@ class RegisterPage extends Component {
   }
 
   registerOnSuccess = () => {
-
+    this.props.history.push('/home')
   }
 
   registerOnFailed = () => {

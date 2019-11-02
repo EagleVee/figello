@@ -125,7 +125,7 @@ class LoginPage extends Component {
   }
 
   loginOnSuccess = () => {
-    this.props.history.push('/register')
+    this.props.history.push('/home')
   }
 
   loginOnFailed = () => {

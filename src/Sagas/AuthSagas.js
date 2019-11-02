@@ -20,8 +20,7 @@ export function * register (action) {
   const { firstName, lastName, email, password, onSuccess, onFailed } = action
   const response = yield call(API.register, firstName, lastName, email, password)
   if (response.status) {
-    if (onSuccess) yield call(onSuccess)
-    yield put(AuthActions.login(email, password))
+    yield put(AuthActions.login(email, password, onSuccess))
   } else {
     if (onFailed) yield call(onFailed)
   }
