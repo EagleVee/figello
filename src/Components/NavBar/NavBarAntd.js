@@ -15,7 +15,7 @@ export default class NavBarAntd extends Component {
       <Menu
         theme='dark'
         style={{ height: '10vh', display: 'flex', alignItems: 'center'}}
-        onClick={this.itemOnClick}
+        onClick={this.props.itemOnClick}
         mode='horizontal'>
         <Menu.Item key='' style={style.menuItem} >
           <Icon type='home' />
