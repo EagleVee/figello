@@ -10,7 +10,7 @@ export default class Container extends Component {
   render () {
     return (
       <Layout>
-        <Header className='fixed-top'>
+        <Header className='fixed-top' style={{ height: '10vh' }}>
           <NavBarAntd
             itemOnClick={this.props.menuOnClick}
           />
