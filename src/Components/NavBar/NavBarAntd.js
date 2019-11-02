@@ -3,12 +3,14 @@ import PropTypes from 'prop-types'
 import { Menu, Icon } from 'antd'
 import './NavBar.css'
 import { Link } from 'react-router-dom'
+import Avatar from '../../Images/avatar.jpg' 
 
 const { SubMenu } = Menu
 
 export default class NavBarAntd extends Component {
   static propTypes = {
-    itemOnClick: PropTypes.func.isRequired
+    itemOnClick: PropTypes.func.isRequired,
+    userName: PropTypes.string
   }
   render () {
     return (
@@ -17,7 +19,7 @@ export default class NavBarAntd extends Component {
         style={{ height: '10vh', display: 'flex', alignItems: 'center'}}
         onClick={this.props.itemOnClick}
         mode='horizontal'>
-        <Menu.Item key='' style={style.menuItem} >
+        <Menu.Item key='home' style={style.menuItem} >
           <Icon type='home' />
           HomePage
         </Menu.Item>
@@ -25,28 +27,25 @@ export default class NavBarAntd extends Component {
           <Icon type='carry-out' />
           Board
         </Menu.Item>
-        <SubMenu
-          title={
-            <span className='submenu-title-wrapper'>
-              <Icon type='setting' />
-              Navigation Three - Submenu
-            </span>
-          }
-        >
-          <Menu.ItemGroup title='Item 1'>
-            <Menu.Item key='setting:1'>Option 1</Menu.Item>
-            <Menu.Item key='setting:2'>Option 2</Menu.Item>
-          </Menu.ItemGroup>
-          <Menu.ItemGroup title='Item 2'>
-            <Menu.Item key='setting:3'>Option 3</Menu.Item>
-            <Menu.Item key='setting:4'>Option 4</Menu.Item>
-          </Menu.ItemGroup>
-        </SubMenu>
+        
         <Menu.Item key='alipay'>
           <Link to='/' target='_blank' rel='noopener noreferrer'>
             Navigation Four - Link
           </Link>
         </Menu.Item>
+        <SubMenu
+          style = {style.rightSubMenu}
+          title={
+            <span style={style.menuItem}>
+            <img src={Avatar} style={style.avatar}  />
+            </span>
+          }
+        >
+          <Menu.ItemGroup title={`${this.props.userName}`}>
+            <Menu.Item className='bg-light text-dark' key=''>Profile And Display</Menu.Item>
+            <Menu.Item className='bg-light text-dark' key='home'>Exit</Menu.Item>
+          </Menu.ItemGroup>
+        </SubMenu>
       </Menu>
     )
   }
@@ -57,5 +56,16 @@ const style = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  rightSubMenu: {
+    display: 'flex',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-end'
+  },
+  avatar: {
+    height: 40,
+    width: 40,
+    borderRadius: '50%'
   }
 }

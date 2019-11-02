@@ -12,6 +12,7 @@ export default class Container extends Component {
       <Layout>
         <Header className='fixed-top' style={{ height: '10vh' }}>
           <NavBarAntd
+            userName='Đỗ Quang Huy'
             itemOnClick={this.props.menuOnClick}
           />
         </Header>
