@@ -9,6 +9,7 @@ class Homepage extends Component {
     return (
       <Container
         menuOnClick={({ key }) => {
+          console.log('KEY', key)
           this.props.history.push('/' + key)}}
       >
         <div className='home-header text-center row'>
@@ -22,10 +23,6 @@ class Homepage extends Component {
         </div>
       </Container>
     )
-  }
-
-  menuOnClick = ({ key }) => {
-    this.props.history.push('/' + key)
   }
 }
 

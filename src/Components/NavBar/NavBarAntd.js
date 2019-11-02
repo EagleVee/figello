@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Menu, Icon } from 'antd'
+import './NavBar.css'
 import { Link } from 'react-router-dom'
 
 const { SubMenu } = Menu
@@ -14,15 +15,15 @@ export default class NavBarAntd extends Component {
       <Menu
         theme='dark'
         style={{ height: '10vh', display: 'flex', alignItems: 'center'}}
-        onClick={this.props.itemOnClick}
+        onClick={this.itemOnClick}
         mode='horizontal'>
-        <Menu.Item key='login'>
-          <Icon type="login" />
-          Navigation One
+        <Menu.Item key='' style={style.menuItem} >
+          <Icon type='home' />
+          HomePage
         </Menu.Item>
-        <Menu.Item key='register'>
-          <Icon type="play-circle" />
-          Navigation Two
+        <Menu.Item key='board' style={style.menuItem}>
+          <Icon type='carry-out' />
+          Board
         </Menu.Item>
         <SubMenu
           title={
@@ -42,11 +43,19 @@ export default class NavBarAntd extends Component {
           </Menu.ItemGroup>
         </SubMenu>
         <Menu.Item key='alipay'>
-          <a href='https://ant.design' target='_blank' rel='noopener noreferrer'>
+          <Link to='/' target='_blank' rel='noopener noreferrer'>
             Navigation Four - Link
-          </a>
+          </Link>
         </Menu.Item>
       </Menu>
     )
+  }
+}
+
+const style = {
+  menuItem: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 }
