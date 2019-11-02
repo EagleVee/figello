@@ -27,9 +27,6 @@ export default class NavBarAntd extends Component {
           <Icon type='carry-out' />
           Board
         </Menu.Item>
-        <SubMenu>
-          <Input.Search className='bg-light' placeholder="input search text" onSearch={value => console.log(value)} enterButton />
-        </SubMenu>
         <SubMenu
           style = {style.rightSubMenu}
           title={
