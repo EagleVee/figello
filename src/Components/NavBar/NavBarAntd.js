@@ -27,17 +27,11 @@ export default class NavBarAntd extends Component {
           <Icon type='carry-out' />
           Board
         </Menu.Item>
-        
-        <Menu.Item key='alipay'>
-          <Link to='/' target='_blank' rel='noopener noreferrer'>
-            Navigation Four - Link
-          </Link>
-        </Menu.Item>
         <SubMenu
           style = {style.rightSubMenu}
           title={
             <span style={style.menuItem}>
-            <img src={Avatar} style={style.avatar}  />
+            <img alt='avatar' src={Avatar} style={style.avatar}  />
             </span>
           }
         >
