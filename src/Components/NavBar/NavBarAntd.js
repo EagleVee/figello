@@ -39,8 +39,8 @@ export default class NavBarAntd extends Component {
           }
         >
           <Menu.ItemGroup title={`${this.props.userName}`}>
-            <Menu.Item className='bg-light text-dark' key=''>Profile And Display</Menu.Item>
-            <Menu.Item className='bg-light text-dark' key='home'>Exit</Menu.Item>
+            <Menu.Item className='bg-dark text-light' key='profile'>Profile And Display</Menu.Item>
+            <Menu.Item className='bg-dark text-light' key='home'>Exit</Menu.Item>
           </Menu.ItemGroup>
         </SubMenu>
       </Menu>
@@ -58,7 +58,7 @@ const style = {
     display: 'flex',
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
   },
   avatar: {
     width: 40,

@@ -7,144 +7,145 @@ import AuthActions from '../Redux/Actions/AuthActions'
 import Container from "../Components/Container"
 
 class LoginPage extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      email: '',
-      password: '',
-      error: ''
-    }
+ constructor(props) {
+  super(props)
+  this.state = {
+   email: '',
+   password: '',
+   error: ''
   }
+ }
 
-  render () {
-    return (
-      <Container
-        menuOnClick={({ key }) => {
-          this.props.history.push('/' + key)}}
-      >
-        <div className='container'>
-          <div className='row'>
-            {this.renderForm()}
-            <div
-              className="align-self-center col-6 d-sm-none d-md-none d-lg-inline overflow-hidden"
-            >
-              <img src={LoginImage} className='login-image' alt='login'/>
-            </div>
-          </div>
-        </div>
-      </Container>
-    )
-  }
-
-  renderForm () {
-    return (
+ render() {
+  return (
+   <Container
+    menuOnClick={({ key }) => {
+     this.props.history.push('/' + key)
+    }}
+   >
+    <div className='container'>
+     <div className='row'>
+      {this.renderForm()}
       <div
-        className='align-self-center col-lg-6 col-md-12 col-sm-12'
+       className="align-self-center col-6 d-sm-none d-md-none d-lg-inline overflow-hidden"
       >
-        <div className='col-12'>
-          <h4 className='header-text text-left'>
-            START YOUR PERSONAL TEAMWORK EXPERIENCE
-          </h4>
-          <h2 className='header-main-text text-left'>
-            Login To Your Account
-          </h2>
-        </div>
-          <form
-            onSubmit={this.loginOnSubmit}
-          >
-            <div className=''>
-              <p className='p-2 text-left'>E-mail</p>
-                <input
-                  type='email'
-                  className='mb-3 login-input col-md-10'
-                  name='email'
-                  placeholder='Your E-mail'
-                  onChange={this.handleEmailOnChange}
-                />
-              <p className='input-header text-left'>Password</p>
-                <input
-                  type='password'
-                  className='mb-3 login-input col-md-10'
-                  name='password'
-                  placeholder='Your Password'
-                  onChange={this.handlePasswordOnChange}
-                />
-            </div>
-            {this.renderFormFooter()}
-          </form>
-        </div>
-    )
-  }
-
-  renderFormFooter () {
-    return (
-      <div className='footer row'>
-        <div className='col-5 text-left'>
-          <Link
-            className='btn btn-outline-primary btn-white footer-btn'
-            to='/register'
-          >
-            Register
-          </Link>
-        </div>
-        <div className='col-5 text-right'>
-        <button
-          type='submit'
-          className='btn btn-primary footer-btn'
-          onClick={this.loginOnSubmit}>
-          Login
-        </button>
-        </div>
+       <img src={LoginImage} className='login-image' alt='login' />
       </div>
-    )
-  }
+     </div>
+    </div>
+   </Container>
+  )
+ }
 
-  handleEmailOnChange = (event) => {
-    const value = event.target.value
-    this.setState({
-      email: value
-    })
-  }
+ renderForm() {
+  return (
+   <div
+    className='align-self-center col-lg-6 col-md-12 col-sm-12'
+   >
+    <div className='col-12'>
+     <h4 className='header-text text-left'>
+      START YOUR PERSONAL TEAMWORK EXPERIENCE
+          </h4>
+     <h2 className='header-main-text text-left'>
+      Login To Your Account
+          </h2>
+    </div>
+    <form
+     onSubmit={this.loginOnSubmit}
+    >
+     <div className=''>
+      <p className='p-2 text-left'>E-mail</p>
+      <input
+       type='email'
+       className='mb-3 login-input col-md-10'
+       name='email'
+       placeholder='Your E-mail'
+       onChange={this.handleEmailOnChange}
+      />
+      <p className='input-header text-left'>Password</p>
+      <input
+       type='password'
+       className='mb-3 login-input col-md-10'
+       name='password'
+       placeholder='Your Password'
+       onChange={this.handlePasswordOnChange}
+      />
+     </div>
+     {this.renderFormFooter()}
+    </form>
+   </div>
+  )
+ }
 
-  handlePasswordOnChange = (event) => {
-    const value = event.target.value
-    this.setState({
-      password: value
-    })
-  }
+ renderFormFooter() {
+  return (
+   <div className='footer row'>
+    <div className='col-5 text-left'>
+     <Link
+      className='btn btn-outline-primary btn-white footer-btn'
+      to='/register'
+     >
+      Register
+          </Link>
+    </div>
+    <div className='col-5 text-right'>
+     <button
+      type='submit'
+      className='btn btn-primary footer-btn'
+      onClick={this.loginOnSubmit}>
+      Login
+        </button>
+    </div>
+   </div>
+  )
+ }
 
-  loginOnSubmit = (event) => {
-    event.preventDefault()
-    this.doLogin()
-  }
+ handleEmailOnChange = (event) => {
+  const value = event.target.value
+  this.setState({
+   email: value
+  })
+ }
 
-  doLogin = () => {
-    const { email, password } = this.state
-    const { login } = this.props
-    login(email, password, this.loginOnSuccess, this.loginOnFailed)
-  }
+ handlePasswordOnChange = (event) => {
+  const value = event.target.value
+  this.setState({
+   password: value
+  })
+ }
 
-  loginOnSuccess = () => {
-    this.props.history.push('/register')
-  }
+ loginOnSubmit = (event) => {
+  event.preventDefault()
+  this.doLogin()
+ }
 
-  loginOnFailed = () => {
-    this.setState({
-      error: 'Some errors happened'
-    })
-  }
+ doLogin = () => {
+  const { email, password } = this.state
+  const { login } = this.props
+  login(email, password, this.loginOnSuccess, this.loginOnFailed)
+ }
+
+ loginOnSuccess = () => {
+  this.props.history.push('/register')
+ }
+
+ loginOnFailed = () => {
+  this.setState({
+   error: 'Some errors happened'
+  })
+ }
 }
 
 const mapStateToProps = (state) => {
-  return {
-    auth: state.auth
-  }
+ return {
+  auth: state.auth
+ }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    login: (email, password, onSuccess, onFailed) => dispatch(AuthActions.login(email, password, onSuccess, onFailed))
-  }
+ return {
+  login: (email, password, onSuccess, onFailed) => dispatch(AuthActions.login(email, password, onSuccess, onFailed))
+ }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)
