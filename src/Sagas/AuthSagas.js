@@ -9,7 +9,7 @@ export function * login (action) {
   if (response.status) {
     const accessToken = response.data.access_token
     CookieHelper.set('accessToken', accessToken)
-    yield call(API.setHeaderToken(accessToken))
+    yield call(API.setHeaderToken, accessToken)
     yield put(AuthActions.loginSuccess(response))
     if (onSuccess) yield call(onSuccess)
   } else {

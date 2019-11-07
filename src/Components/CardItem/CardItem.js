@@ -13,7 +13,7 @@ export default class CardItem extends Component {
       ...draggableStyle,
     });
     return (
-      <Draggable key={this.props.data._id} draggableId={this.props.data._id} index={this.props.index}>
+      <Draggable key={this.props.data._id} draggableId={this.props.data._id} index={this.props.Container}>
         {(provided, snapshot) => (
           <div ref={provided.innerRef}
             {...provided.draggableProps}

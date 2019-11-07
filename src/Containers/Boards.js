@@ -4,7 +4,7 @@ import "antd/dist/antd.css";
 import "./Styles/Board.css";
 import {connect} from "react-redux";
 import {Card, Avatar} from "antd";
-import Container from '../Components/Container'
+import Container from '../Components/Container/Container'
 
 class BoardScreen extends Component {
   state = {

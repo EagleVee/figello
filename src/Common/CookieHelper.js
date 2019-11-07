@@ -10,8 +10,13 @@ export default class CookieHelper {
     })
   }
 
-  static get (key) {
-    return cookies.get(key)
+  static get (key, defaultValue) {
+    const value = cookies.get(key)
+    if (value) {
+      return value
+    }
+
+    return defaultValue
   }
 
   static remove (key) {

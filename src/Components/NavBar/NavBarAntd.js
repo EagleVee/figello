@@ -11,7 +11,9 @@ export default class NavBarAntd extends Component {
   static propTypes = {
     isAuthenticated: PropTypes.bool.isRequired,
     itemOnClick: PropTypes.func.isRequired,
-    userName: PropTypes.string
+    userName: PropTypes.string,
+    loginOnPress: PropTypes.func,
+    registerOnPress: PropTypes.func
   }
 
   static defaultProps = {
@@ -21,6 +23,7 @@ export default class NavBarAntd extends Component {
   render() {
     return (
       <Menu
+        selectable={false}
         theme='dark'
         style={style.menu}
         onClick={this.props.itemOnClick}
@@ -40,7 +43,6 @@ export default class NavBarAntd extends Component {
 
   renderRightMenu() {
     const {isAuthenticated} = this.props
-    console.log(isAuthenticated)
     return (isAuthenticated === true
         ? <SubMenu
           style={style.rightSubMenu}
@@ -50,21 +52,29 @@ export default class NavBarAntd extends Component {
             </span>
           }
         >
-          <Menu.ItemGroup title={`${this.props.userName}`}>
-            <Menu.Item className='bg-light text-dark' key=''>Profile And Display</Menu.Item>
-            <Menu.Item className='bg-light text-dark' key='home'>Exit</Menu.Item>
+          <Menu.ItemGroup title={this.props.userName}>
+            <Menu.Item className='' key='profile'>Profile And Display</Menu.Item>
+            <Menu.Item className='' key='' disabled>
+              <button className='ant-menu-dark text-danger text-left'>
+              Log Out
+              </button>
+            </Menu.Item>
           </Menu.ItemGroup>
         </SubMenu>
         : <div style={style.rightSubMenu}>
           <button
-            onClick={this.props.loginOnPress}
+            onClick={() => {
+              this.props.itemOnClick({ key: 'login' })
+            }}
             style={style.menuItem}
             className='btn btn-dark text-white'
           >
             Login
           </button>
           <button
-            onClick={this.props.registerOnPress}
+            onClick={() => {
+              this.props.itemOnClick({ key: 'register' })
+            }}
             style={style.menuItem}
             className='btn btn-light text-dark ml-1'
           >

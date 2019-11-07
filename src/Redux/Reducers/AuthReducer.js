@@ -4,7 +4,7 @@ import { AuthTypes } from '../Actions/AuthActions'
 
 export const INITIAL_STATE = Immutable({
   phone: '',
-  isAuthenticated: true,
+  isAuthenticated: false,
   user: {}
 })
 
@@ -18,10 +18,10 @@ export const loginSuccess = (state, action) => {
 }
 
 export const validateTokenSuccess = (state, action) => {
-  const { user } = action.response
+  const { data } = action.response
   return state.merge({
     isAuthenticated: true,
-    user: user
+    user: data.user
   })
 }
 

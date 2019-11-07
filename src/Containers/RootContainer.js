@@ -3,27 +3,29 @@ import { connect } from 'react-redux'
 import StartupActions from '../Redux/Actions/StartupActions'
 
 // Styles
-import Routes from '../Navigation/Routes'
-import { Redirect, Route } from 'react-router'
+import history from '../Navigation/History'
 import HomePage from './HomePage'
 import LoginPage from './LoginPage'
 import RegisterPage from './RegisterPage'
 import BoardScreen from './Boards'
 import Board from './Board'
-import { BrowserRouter as Router } from 'react-router-dom'
-import Container from '../Components/Container'
+import { Route, Redirect, Router } from 'react-router-dom'
+import Container from '../Components/Container/Container'
 
+// export const history =
 class RootContainer extends Component {
   render () {
-    const { isAuthenticated } = this.props.auth
+    const { isAuthenticated, user } = this.props.auth
+    const userName = user.first_name ? user.first_name : ''
     return (
       <Container
+        userName={userName}
         isAuthenticated={isAuthenticated}
         menuOnClick={({ key }) => {
-          this.props.history.push('/' + key)
+          history.push('/' + key)
         }}
       >
-        <Router>
+        <Router history={history}>
           <Route
             exact
             path='/'

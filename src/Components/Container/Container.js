@@ -7,7 +7,8 @@ export default class Container extends Component {
   static propTypes = {
     containerStyle: PropTypes.object,
     menuOnClick: PropTypes.func.isRequired,
-    isAuthenticated: PropTypes.bool.isRequired
+    isAuthenticated: PropTypes.bool.isRequired,
+    userName: PropTypes.string
   }
   render () {
     const layoutStyle = {
@@ -18,8 +19,10 @@ export default class Container extends Component {
       <Layout style={layoutStyle}>
         <Header className='fixed-top row' style={{ height: '10vh' }}>
           <NavBarAntd
+            loginOnPress={this.props.loginOnPress}
+            registerOnPress={this.props.registerOnPress}
             isAuthenticated={this.props.isAuthenticated}
-            userName='Đỗ Quang Huy'
+            userName={this.props.userName}
             itemOnClick={this.props.menuOnClick}
           />
         </Header>
