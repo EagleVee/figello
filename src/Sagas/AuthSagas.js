@@ -1,15 +1,17 @@
 import API from '../Lib/API'
 import { call, put } from 'redux-saga/effects'
 import AuthActions from '../Redux/Actions/AuthActions'
+import CookieHelper from '../Common/CookieHelper'
 
 export function * login (action) {
   const { email, password, onSuccess, onFailed } = action
   const response = yield call(API.login, email, password)
   if (response.status) {
     const accessToken = response.data.access_token
-    // API.setAccessToken(accessToken)
-    if (onSuccess) yield call(onSuccess)
+    CookieHelper.set('accessToken', accessToken)
+    yield call(API.setAccessToken(accessToken))
     yield put(AuthActions.loginSuccess(response))
+    if (onSuccess) yield call(onSuccess)
   } else {
     if (onFailed) yield call(onFailed)
   }
@@ -19,8 +21,7 @@ export function * register (action) {
   const { firstName, lastName, email, password, onSuccess, onFailed } = action
   const response = yield call(API.register, firstName, lastName, email, password)
   if (response.status) {
-    if (onSuccess) yield call(onSuccess)
-    yield put(AuthActions.login(email, password))
+    yield put(AuthActions.login(email, password, onSuccess))
   } else {
     if (onFailed) yield call(onFailed)
   }

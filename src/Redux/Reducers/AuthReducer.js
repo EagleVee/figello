@@ -11,26 +11,9 @@ export const INITIAL_STATE = Immutable({
 export const loginSuccess = (state, action) => {
   const { data } = action.response
   const { user } = data
-  const accessToken = data.access_token
   return state.merge({
     isAuthenticated: true,
-    accessToken: accessToken,
     user: user
-  })
-}
-
-export const phoneCheckExist = (state, action) => {
-  const { phone } = action
-  return state.merge({
-    phone: phone
-  })
-}
-
-export const sendOTPSuccess = (state, action) => {
-  const { data } = action.response
-  return state.merge({
-    otp: data.customer.otp,
-    otpExpired: data.customer.otp_expired_at
   })
 }
 
