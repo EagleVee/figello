@@ -4,7 +4,6 @@ import './Styles/RegisterPage.css'
 import LoginImage from '../Images/login.png'
 import AuthActions from '../Redux/Actions/AuthActions'
 import {connect} from 'react-redux'
-import Container from "../Components/Container";
 
 class RegisterPage extends Component {
   constructor(props) {
@@ -21,19 +20,14 @@ class RegisterPage extends Component {
 
   render() {
     return (
-      <Container
-        menuOnClick={({ key }) => {
-          this.props.history.push('/' + key)}}
-      >
-        <div className='container'>
-          <div className='row'>
-            {this.renderForm()}
-            <div className='align-self-center col-6 d-sm-none d-md-none d-lg-inline overflow-hidden'>
-              <img src={LoginImage} className='login-image' alt='register'/>
-            </div>
+      <div className='container'>
+        <div className='row'>
+          {this.renderForm()}
+          <div className='align-self-center col-6 d-sm-none d-md-none d-lg-inline overflow-hidden'>
+            <img src={LoginImage} className='login-image' alt='register'/>
           </div>
         </div>
-      </Container>
+      </div>
     )
   }
 

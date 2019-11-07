@@ -4,7 +4,7 @@ import { AuthTypes } from '../Actions/AuthActions'
 
 export const INITIAL_STATE = Immutable({
   phone: '',
-  isAuthenticated: false,
+  isAuthenticated: true,
   user: {}
 })
 
@@ -18,22 +18,10 @@ export const loginSuccess = (state, action) => {
 }
 
 export const validateTokenSuccess = (state, action) => {
-  const { response } = action
+  const { user } = action.response
   return state.merge({
-    isAuthenticated: response.data.is_alive
-  })
-}
-
-export const meSuccess = (state, action) => {
-  const { data } = action.response
-  return state.merge({
-    user: data
-  })
-}
-
-export const refreshTokenSuccess = (state, action) => {
-  return state.merge({
-    isAuthenticated: true
+    isAuthenticated: true,
+    user: user
   })
 }
 
@@ -47,7 +35,5 @@ export const logoutTokenSuccess = (state, action) => {
 export const reducer = createReducer(INITIAL_STATE, {
   [AuthTypes.LOGIN_SUCCESS]: loginSuccess,
   [AuthTypes.VALIDATE_TOKEN_SUCCESS]: validateTokenSuccess,
-  [AuthTypes.REFRESH_TOKEN_SUCCESS]: refreshTokenSuccess,
   [AuthTypes.LOGOUT_TOKEN_SUCCESS]: logoutTokenSuccess,
-  [AuthTypes.ME_SUCCESS]: meSuccess
 })

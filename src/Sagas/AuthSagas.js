@@ -9,7 +9,7 @@ export function * login (action) {
   if (response.status) {
     const accessToken = response.data.access_token
     CookieHelper.set('accessToken', accessToken)
-    yield call(API.setAccessToken(accessToken))
+    yield call(API.setHeaderToken(accessToken))
     yield put(AuthActions.loginSuccess(response))
     if (onSuccess) yield call(onSuccess)
   } else {
@@ -29,18 +29,8 @@ export function * register (action) {
 
 export function * validateToken (action) {
   const response = yield call(API.validateToken)
-  const { data } = response
   if (response.status) {
-    if (data.is_alive) {
-      yield put(AuthActions.refreshToken())
-    }
-  }
-}
-
-export function * refreshToken (action) {
-  const response = yield call(API.refreshToken)
-  if (response.status) {
-    yield put(AuthActions.refreshTokenSuccess(response))
+    yield put(AuthActions.validateTokenSuccess(response))
   }
 }
 export function * logoutToken (action) {

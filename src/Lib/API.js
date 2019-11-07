@@ -75,7 +75,7 @@ const DELETE = (url, config = {}) => {
 }
 
 const API = {
-  setAccessToken: (accessToken) => {
+  setHeaderToken: (accessToken) => {
     instance.defaults.headers.common.Authorization = accessToken
   },
   // PUT giống post
@@ -96,6 +96,10 @@ const API = {
       password: password
     }
     return POST(path, data, {})
+  },
+  validateToken: () => {
+    const path = '/auth/token/validate'
+    return GET(path)
   }
 }
 

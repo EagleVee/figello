@@ -7,10 +7,8 @@ import { AuthTypes } from '../Redux/Actions/AuthActions'
 import { startup } from './StartupSagas'
 import {
   validateToken,
-  me,
   login,
   logoutToken,
-  refreshToken,
   register
 } from './AuthSagas'
 
@@ -19,8 +17,6 @@ export default function * root () {
     // some sagas only receive an action
     takeLatest(StartupTypes.STARTUP, startup),
     takeLatest(AuthTypes.VALIDATE_TOKEN, validateToken),
-    takeLatest(AuthTypes.ME, me),
-    takeLatest(AuthTypes.REFRESH_TOKEN, refreshToken),
     takeLatest(AuthTypes.LOGIN, login),
     takeLatest(AuthTypes.LOGOUT_TOKEN, logoutToken),
     takeLatest(AuthTypes.REGISTER, register)

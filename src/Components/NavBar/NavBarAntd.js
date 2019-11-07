@@ -9,7 +9,7 @@ const {SubMenu} = Menu
 
 export default class NavBarAntd extends Component {
   static propTypes = {
-    isAuthenticated: PropTypes.bool,
+    isAuthenticated: PropTypes.bool.isRequired,
     itemOnClick: PropTypes.func.isRequired,
     userName: PropTypes.string
   }
@@ -40,7 +40,8 @@ export default class NavBarAntd extends Component {
 
   renderRightMenu() {
     const {isAuthenticated} = this.props
-    return (isAuthenticated
+    console.log(isAuthenticated)
+    return (isAuthenticated === true
         ? <SubMenu
           style={style.rightSubMenu}
           title={
@@ -55,20 +56,20 @@ export default class NavBarAntd extends Component {
           </Menu.ItemGroup>
         </SubMenu>
         : <div style={style.rightSubMenu}>
-          <Link
-            to='/login'
+          <button
+            onClick={this.props.loginOnPress}
             style={style.menuItem}
             className='btn btn-dark text-white'
           >
             Login
-          </Link>
-          <Link
-            to='register'
+          </button>
+          <button
+            onClick={this.props.registerOnPress}
             style={style.menuItem}
             className='btn btn-light text-dark ml-1'
           >
             Register
-          </Link>
+          </button>
         </div>
     )
   }

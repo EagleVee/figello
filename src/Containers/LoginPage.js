@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Link } from "react-router-dom";
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {Link} from "react-router-dom";
 import './Styles/LoginPage.css'
 import LoginImage from '../Images/login.png'
 import AuthActions from '../Redux/Actions/AuthActions'
-import Container from "../Components/Container"
 
 class LoginPage extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       email: '',
@@ -16,27 +15,22 @@ class LoginPage extends Component {
     }
   }
 
-  render () {
+  render() {
     return (
-      <Container
-        menuOnClick={({ key }) => {
-          this.props.history.push('/' + key)}}
-      >
-        <div className='container'>
-          <div className='row'>
-            {this.renderForm()}
-            <div
-              className="align-self-center col-6 d-sm-none d-md-none d-lg-inline overflow-hidden"
-            >
-              <img src={LoginImage} className='login-image' alt='login'/>
-            </div>
+      <div className='container'>
+        <div className='row'>
+          {this.renderForm()}
+          <div
+            className="align-self-center col-6 d-sm-none d-md-none d-lg-inline overflow-hidden"
+          >
+            <img src={LoginImage} className='login-image' alt='login'/>
           </div>
         </div>
-      </Container>
+      </div>
     )
   }
 
-  renderForm () {
+  renderForm() {
     return (
       <div
         className='align-self-center col-lg-6 col-md-12 col-sm-12'
@@ -49,34 +43,34 @@ class LoginPage extends Component {
             Login To Your Account
           </h2>
         </div>
-          <form
-            onSubmit={this.loginOnSubmit}
-          >
-            <div className=''>
-              <p className='p-2 text-left'>E-mail</p>
-                <input
-                  type='email'
-                  className='mb-3 login-input col-md-10'
-                  name='email'
-                  placeholder='Your E-mail'
-                  onChange={this.handleEmailOnChange}
-                />
-              <p className='input-header text-left'>Password</p>
-                <input
-                  type='password'
-                  className='mb-3 login-input col-md-10'
-                  name='password'
-                  placeholder='Your Password'
-                  onChange={this.handlePasswordOnChange}
-                />
-            </div>
-            {this.renderFormFooter()}
-          </form>
-        </div>
+        <form
+          onSubmit={this.loginOnSubmit}
+        >
+          <div className=''>
+            <p className='p-2 text-left'>E-mail</p>
+            <input
+              type='email'
+              className='mb-3 login-input col-md-10'
+              name='email'
+              placeholder='Your E-mail'
+              onChange={this.handleEmailOnChange}
+            />
+            <p className='input-header text-left'>Password</p>
+            <input
+              type='password'
+              className='mb-3 login-input col-md-10'
+              name='password'
+              placeholder='Your Password'
+              onChange={this.handlePasswordOnChange}
+            />
+          </div>
+          {this.renderFormFooter()}
+        </form>
+      </div>
     )
   }
 
-  renderFormFooter () {
+  renderFormFooter() {
     return (
       <div className='footer row'>
         <div className='col-5 text-left'>
@@ -88,12 +82,12 @@ class LoginPage extends Component {
           </Link>
         </div>
         <div className='col-5 text-right'>
-        <button
-          type='submit'
-          className='btn btn-primary footer-btn'
-          onClick={this.loginOnSubmit}>
-          Login
-        </button>
+          <button
+            type='submit'
+            className='btn btn-primary footer-btn'
+            onClick={this.loginOnSubmit}>
+            Login
+          </button>
         </div>
       </div>
     )
@@ -119,8 +113,8 @@ class LoginPage extends Component {
   }
 
   doLogin = () => {
-    const { email, password } = this.state
-    const { login } = this.props
+    const {email, password} = this.state
+    const {login} = this.props
     login(email, password, this.loginOnSuccess, this.loginOnFailed)
   }
 

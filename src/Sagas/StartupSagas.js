@@ -1,6 +1,7 @@
 import { put, call } from 'redux-saga/effects'
 import API from '../Lib/API'
+import CookieHelper from '../Common/CookieHelper'
 
 export function * startup (action) {
-  console.log('START UP')
+  const accessToken = CookieHelper.get('accessToken')
 }

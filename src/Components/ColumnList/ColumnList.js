@@ -38,10 +38,11 @@ export default class ColumnList extends Component {
             {
               this.props.columns.map((val, index) => {
                 return <Column
+                  key={index}
                   index={index}
                   name={val.name}
                   data={this.state.data}
-                ></Column>;
+                />;
               })
             }
           </div>

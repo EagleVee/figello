@@ -1,62 +1,63 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import "antd/dist/antd.css";
-import "./Styles/Board.css";
-import ColumnList from "../Components/ColumnList/ColumnList";
-import { connect } from "react-redux";
-import Container from "../Components/Container";
+import React, { Component } from 'react'
+import 'antd/dist/antd.css'
+import './Styles/Board.css'
+import ColumnList from '../Components/ColumnList/ColumnList'
+import { connect } from 'react-redux'
 
 class Board extends Component {
-  state = {
-    columns: [
-      {
-        _id: 1,
-        name: 'Backlog',
-      },
-      {
-        _id: 2,
-        name: 'To do',
-      },
-      {
-        _id: 3,
-        name: 'Doing',
-      },
-      {
-        _id: 4,
-        name: 'Finished'
-      }
-    ],
-    data: []
-  };
-  render() {
+  constructor (props) {
+    super(props)
+    this.state = {
+      columns: [
+        {
+          _id: 1,
+          name: 'Backlog'
+        },
+        {
+          _id: 2,
+          name: 'To do'
+        },
+        {
+          _id: 3,
+          name: 'Doing'
+        },
+        {
+          _id: 4,
+          name: 'Finished'
+        }
+      ],
+      data: []
+    }
+  }
+
+  render () {
     return (
-      <Container
-        menuOnClick={({ key }) => {
-          this.props.history.push('/' + key)}}
-      >
       <div className='main-background'>
-        <div className="wrapper pl-3 pr-3">
-          <div className="row">
+        <div className='wrapper pl-3 pr-3'>
+          <div className='row'>
             <ColumnList
               columns={this.state.columns}
             />
           </div>
         </div>
-        </div>
-        </Container>
-    );
+      </div>
+    )
+  }
+
+  componentDidMount () {
+    console.log('HISTORY', this.props.history)
   }
 }
 
 const mapStateToProps = state => {
-  return {};
-};
+  return {}
+}
 
 const mapDispatchToProps = dispatch => {
-  return {};
-};
+  return {}
+}
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Board);
+)(Board)

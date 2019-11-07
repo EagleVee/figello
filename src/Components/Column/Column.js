@@ -1,20 +1,19 @@
-import React, { Component } from "react"
-import { Droppable } from "react-beautiful-dnd"
+import React, { Component } from 'react'
+import { Droppable } from 'react-beautiful-dnd'
 import { Row, Col } from 'antd'
 import CardItem from '../CardItem/CardItem'
-import "./Column.css";
+import './Column.css'
 
 export default class Column extends Component {
-
-  render() {
+  render () {
     const getListStyle = (isDraggingOver) => ({
-      background: isDraggingOver ? 'lightblue' : 'rgb(240, 242, 245)',
-    });
+      background: isDraggingOver ? 'lightblue' : 'rgb(240, 242, 245)'
+    })
     return (
-      <div className="wrapper-table">
-        <Row className="">
+      <div className='wrapper-table'>
+        <Row className=''>
           <Col xs={24}>
-            <div className="information-stage">
+            <div className='information-stage'>
               {this.props.name}
             </div>
           </Col>
@@ -34,19 +33,19 @@ export default class Column extends Component {
                         data={val}
                         index={index}
                       />
-                    );
+                    )
                   })}
                   {provided.placeholder}
                 </div>
               )}
             </Droppable>
             <div className='add-wrapper'>
-              <i className='fa fa-plus mr-2 add-icon'></i>
+              <i className='fa fa-plus mr-2 add-icon' />
               <span className='add-label'>Add another card</span>
             </div>
           </div>
         </Row>
       </div>
-    );
+    )
   }
 }
