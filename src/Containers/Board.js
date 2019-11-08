@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import 'antd/dist/antd.css'
-import './Styles/Board.css'
+import './Styles/BoardPage.css'
 import ColumnList from '../Components/ColumnList/ColumnList'
 import { connect } from 'react-redux'
 

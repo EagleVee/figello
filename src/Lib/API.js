@@ -78,28 +78,48 @@ const API = {
   setHeaderToken: (accessToken) => {
     instance.defaults.headers.common.Authorization = accessToken
   },
-  // PUT giống post
-  login: (email, password) => {
-    const path = '/auth/login'
-    const data = {
-      email: email,
-      password: password
-    }
-    return POST(path, data, {})
+  auth: {
+    login: (email, password) => {
+      const path = '/auth/login'
+      const data = {
+        email: email,
+        password: password
+      }
+      return POST(path, data, {})
+    },
+    register: (firstName, lastName, email, password) => {
+      const path = '/auth/register'
+      const data = {
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        password: password
+      }
+      return POST(path, data, {})
+    },
+    validateToken: () => {
+      const path = '/auth/token/validate'
+      return GET(path)
+    },
+    auth: () => {}
   },
-  register: (firstName, lastName, email, password) => {
-    const path = '/auth/register'
-    const data = {
-      first_name: firstName,
-      last_name: lastName,
-      email: email,
-      password: password
+  board: {
+    getListBoard: (id) => {
+      const path = '/board/user/' + id
+      return GET(path)
+    },
+    createBoard: (data) => {
+      const path = '/board'
+      return POST(path, data)
+    },
+    updateBoard: (id, data) => {
+      const path = '/board/' + id
+      return PUT(path, data)
+    },
+    deleteBoard: (id) => {
+      const path = '/board/' + id
+      return DELETE(path)
     }
-    return POST(path, data, {})
-  },
-  validateToken: () => {
-    const path = '/auth/token/validate'
-    return GET(path)
   }
 }
 

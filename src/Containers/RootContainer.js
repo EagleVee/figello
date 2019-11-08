@@ -7,8 +7,8 @@ import history from '../Navigation/History'
 import HomePage from './HomePage'
 import LoginPage from './LoginPage'
 import RegisterPage from './RegisterPage'
-import BoardScreen from './Boards'
-import Board from './Board'
+import BrowseBoardPage from './BrowseBoardPage'
+import BoardPage from './BoardPage'
 import { Route, Redirect, Router } from 'react-router-dom'
 import Container from '../Components/Container/Container'
 
@@ -40,10 +40,10 @@ class RootContainer extends Component {
           <Route exact path='/home' component={HomePage} />
           <Route exact path='/login' component={LoginPage} />
           <Route exact path='/register' component={RegisterPage} />
-          <Route exact path='/board' component={BoardScreen} />
+          <Route exact path='/board' component={BrowseBoardPage} />
           <Route
             path='/board-item/:id' render={(props) => {
-              return <Board key={props.match.params.id} />
+              return <BoardPage key={props.match.params.id} />
             }}
           />
         </Router>

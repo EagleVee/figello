@@ -1,15 +1,19 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import "antd/dist/antd.css";
-import "./Styles/Board.css";
+import "./Styles/BoardPage.css";
 import {connect} from "react-redux";
 import {Card, Avatar} from "antd";
-import Container from '../Components/Container/Container'
+import BoardActions from '../Redux/Actions/BoardActions'
 
-class BoardScreen extends Component {
-  state = {
-    data: ['brown', '#a77858', 'blue', 'green', 'purple', 'orange', '#af3990']
-  };
+class BrowseBoardPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: ['brown', '#a77858', 'blue', 'green', 'purple', 'orange', '#af3990']
+    };
+  }
+
 
   render() {
     return (
@@ -44,17 +48,32 @@ class BoardScreen extends Component {
       </div>
     );
   }
+
+  componentDidMount() {
+    this.getListBoard()
+  }
+
+  getListBoard = () => {
+    const { user } = auth
+    const id = user.id ? user.id : ''
+    this.props.getListBoard(id)
+  }
 }
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    auth: state.auth,
+    board: state.board
+  };
 };
 
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    getListBoard: (id) => dispatch(BoardActions.getListBoard(id))
+  };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(BoardScreen);
+)(BrowseBoardPage);

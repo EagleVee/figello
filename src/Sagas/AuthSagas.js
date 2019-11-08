@@ -5,7 +5,7 @@ import CookieHelper from '../Common/CookieHelper'
 
 export function * login (action) {
   const { email, password, onSuccess, onFailed } = action
-  const response = yield call(API.login, email, password)
+  const response = yield call(API.auth.login, email, password)
   if (response.status) {
     const accessToken = response.data.access_token
     CookieHelper.set('accessToken', accessToken)
@@ -19,7 +19,7 @@ export function * login (action) {
 
 export function * register (action) {
   const { firstName, lastName, email, password, onSuccess, onFailed } = action
-  const response = yield call(API.register, firstName, lastName, email, password)
+  const response = yield call(API.auth.register, firstName, lastName, email, password)
   if (response.status) {
     yield put(AuthActions.login(email, password, onSuccess))
   } else {
@@ -28,25 +28,18 @@ export function * register (action) {
 }
 
 export function * validateToken (action) {
-  const response = yield call(API.validateToken)
+  const response = yield call(API.auth.validateToken)
   if (response.status) {
     yield put(AuthActions.validateTokenSuccess(response))
   }
 }
 export function * logoutToken (action) {
   const { onSuccess, onFailed } = action
-  const response = yield call(API.logoutToken)
+  const response = yield call(API.auth.logout)
   if (response.status) {
     yield put(AuthActions.logoutTokenSuccess(response))
     yield call(onSuccess)
   } else {
     // yield call(onFailed, 'Có lỗi xảy ra khi đăng xuất')
-  }
-}
-
-export function * me (action) {
-  const response = yield call(API.me)
-  if (response.status) {
-    yield put(AuthActions.meSuccess(response))
   }
 }

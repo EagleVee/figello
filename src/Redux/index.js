@@ -3,9 +3,11 @@ import configureStore from './CreateStore'
 import rootSaga from '../Sagas/'
 
 import { reducer as AuthReducer } from './Reducers/AuthReducer'
+import { reducer as BoardReducer } from './Reducers/BoardReducer'
 /* ------------- Assemble The Reducers ------------- */
 export const reducers = combineReducers({
-  auth: AuthReducer
+  auth: AuthReducer,
+  board: BoardReducer
 })
 
 export default () => {
