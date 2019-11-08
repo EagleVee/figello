@@ -23,7 +23,7 @@ export default class ColumnList extends Component {
   render () {
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
-        <div style={{ width: '100%', textAlign: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
           <div style={{ display: 'flex' }}>
             {
               this.props.columns.map((val, index) => {

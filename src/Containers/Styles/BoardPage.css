@@ -59,6 +59,7 @@
 
 .column-container {
   display: flex;
+  min-height: 88vh;
   flex-direction: row;
   overflow-x: scroll;
   overflow-y: hidden;
