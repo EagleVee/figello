@@ -128,7 +128,13 @@ class RegisterPage extends Component {
   doRegister = () => {
     const {register} = this.props
     const {firstName, lastName, email, password} = this.state
-    register(firstName, lastName, email, password, this.registerOnSuccess, this.registerOnFailed)
+    const data = {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      password: password
+    }
+    register(data, this.registerOnSuccess, this.registerOnFailed)
   }
 
   registerOnSuccess = () => {
@@ -148,7 +154,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    register: (firstName, lastName, email, password, onSuccess, onFailed) => dispatch(AuthActions.register(firstName, lastName, email, password, onSuccess, onFailed))
+    register: (data, onSuccess, onFailed) => dispatch(AuthActions.register(data, onSuccess, onFailed))
   }
 }
 

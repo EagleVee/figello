@@ -1,17 +1,17 @@
 import { createActions } from 'reduxsauce'
 
 const { Types, Creators } = createActions({
-  login: ['email', 'password', 'onSuccess', 'onFailed'],
+  login: ['data', 'onSuccess', 'onFailed'],
   loginSuccess: ['response'],
-  register: ['firstName', 'lastName', 'email', 'password', 'onSuccess', 'onFailed'],
+  register: ['data', 'onSuccess', 'onFailed'],
   validateToken: [],
   validateTokenSuccess: ['response'],
   me: [],
   meSuccess: ['response'],
   refreshToken: [],
   refreshTokenSuccess: ['response'],
-  logoutToken: ['onSuccess', 'onFailed'],
-  logoutTokenSuccess: ['response']
+  logout: ['onSuccess', 'onFailed'],
+  logoutSuccess: ['response']
 })
 
 export const AuthTypes = Types

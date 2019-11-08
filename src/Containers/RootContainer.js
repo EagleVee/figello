@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import StartupActions from '../Redux/Actions/StartupActions'
+import AuthActions from '../Redux/Actions/AuthActions'
 
 // Styles
 import history from '../Navigation/History'
@@ -20,6 +21,7 @@ class RootContainer extends Component {
     const userName = user.first_name ? user.first_name : ''
     return (
       <Container
+        logoutOnClick={this.handleLogoutOnClick}
         userName={userName}
         isAuthenticated={isAuthenticated}
         menuOnClick={({ key }) => {
@@ -54,6 +56,15 @@ class RootContainer extends Component {
     )
   }
 
+  handleLogoutOnClick = (event) => {
+    event.preventDefault()
+    this.props.logout(this.logoutSuccess)
+  }
+
+  logoutSuccess = () => {
+    history.push('/home')
+  }
+
   componentDidMount () {
     this.props.startup()
   }
@@ -64,6 +75,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
+  logout: (onSuccess, onFailed) => dispatch(AuthActions.logout(onSuccess, onFailed)),
   startup: () => dispatch(StartupActions.startup())
 })
 

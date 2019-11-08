@@ -31,6 +31,7 @@ class LoginPage extends Component {
   }
 
   renderForm() {
+    const { error } = this.state
     return (
       <div
         className='align-self-center col-lg-6 col-md-12 col-sm-12'
@@ -47,6 +48,10 @@ class LoginPage extends Component {
           onSubmit={this.loginOnSubmit}
         >
           <div className=''>
+            {error !== ''
+              ? <p className='text-danger'>{error}</p>
+              : <div />
+            }
             <p className='p-2 text-left'>E-mail</p>
             <input
               type='email'
@@ -115,16 +120,21 @@ class LoginPage extends Component {
   doLogin = () => {
     const {email, password} = this.state
     const {login} = this.props
-    login(email, password, this.loginOnSuccess, this.loginOnFailed)
+    const data = {
+      email: email,
+      password: password
+    }
+    login(data, this.loginOnSuccess, this.loginOnFailed)
   }
 
   loginOnSuccess = () => {
     this.props.history.push('/boards')
   }
 
-  loginOnFailed = () => {
+  loginOnFailed = (response) => {
+    const { message } = response
     this.setState({
-      error: 'Some errors happened'
+      error: message
     })
   }
 }
@@ -137,7 +147,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    login: (email, password, onSuccess, onFailed) => dispatch(AuthActions.login(email, password, onSuccess, onFailed))
+    login: (data, onSuccess, onFailed) => dispatch(AuthActions.login(data, onSuccess, onFailed))
   }
 }
 

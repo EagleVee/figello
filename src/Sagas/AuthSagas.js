@@ -5,8 +5,8 @@ import BoardActions from '../Redux/Actions/BoardActions'
 import CookieHelper from '../Common/CookieHelper'
 
 export function * login (action) {
-  const { email, password, onSuccess, onFailed } = action
-  const response = yield call(API.auth.login, email, password)
+  const { data, onSuccess, onFailed } = action
+  const response = yield call(API.auth.login, data)
   if (response.status) {
     const { user, access_token } = response.data
     CookieHelper.set('accessToken', access_token)
@@ -15,15 +15,15 @@ export function * login (action) {
     yield put(BoardActions.getListBoard(user._id))
     if (onSuccess) yield call(onSuccess)
   } else {
-    if (onFailed) yield call(onFailed)
+    if (onFailed) yield call(onFailed, response)
   }
 }
 
 export function * register (action) {
-  const { firstName, lastName, email, password, onSuccess, onFailed } = action
-  const response = yield call(API.auth.register, firstName, lastName, email, password)
+  const { data, onSuccess, onFailed } = action
+  const response = yield call(API.auth.register, data)
   if (response.status) {
-    yield put(AuthActions.login(email, password, onSuccess))
+    yield put(AuthActions.login(data.email, data.password, onSuccess))
   } else {
     if (onFailed) yield call(onFailed)
   }
@@ -37,13 +37,13 @@ export function * validateToken (action) {
     yield put(BoardActions.getListBoard(user._id))
   }
 }
-export function * logoutToken (action) {
+export function * logout (action) {
   const { onSuccess, onFailed } = action
   const response = yield call(API.auth.logout)
   if (response.status) {
-    yield put(AuthActions.logoutTokenSuccess(response))
+    yield put(AuthActions.logoutSuccess(response))
     yield call(onSuccess)
   } else {
-    // yield call(onFailed, 'Có lỗi xảy ra khi đăng xuất')
+    yield call(onFailed)
   }
 }

@@ -9,8 +9,7 @@ import { startup } from './StartupSagas'
 import {
   validateToken,
   login,
-  logoutToken,
-  register
+  register, logout
 } from './AuthSagas'
 import {
   createBoard, createCard,
@@ -28,8 +27,8 @@ export default function * root () {
     takeLatest(StartupTypes.STARTUP, startup),
     takeLatest(AuthTypes.VALIDATE_TOKEN, validateToken),
     takeLatest(AuthTypes.LOGIN, login),
-    takeLatest(AuthTypes.LOGOUT_TOKEN, logoutToken),
     takeLatest(AuthTypes.REGISTER, register),
+    takeLatest(AuthTypes.LOGOUT, logout),
     takeLatest(BoardTypes.GET_LIST_BOARD, getListBoard),
     takeLatest(BoardTypes.CREATE_BOARD, createBoard),
     takeLatest(BoardTypes.UPDATE_BOARD, updateBoard),

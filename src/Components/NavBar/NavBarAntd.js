@@ -12,8 +12,7 @@ export default class NavBarAntd extends Component {
     isAuthenticated: PropTypes.bool.isRequired,
     itemOnClick: PropTypes.func.isRequired,
     userName: PropTypes.string,
-    loginOnPress: PropTypes.func,
-    registerOnPress: PropTypes.func
+    logoutOnClick: PropTypes.func,
   }
 
   static defaultProps = {
@@ -55,7 +54,7 @@ export default class NavBarAntd extends Component {
           <Menu.ItemGroup title={this.props.userName}>
             <Menu.Item className='' key='profile'>Profile And Display</Menu.Item>
             <Menu.Item className='' key='' disabled>
-              <button className='ant-menu-dark text-danger text-left'>
+              <button onClick={this.props.logoutOnClick} className='ant-menu-dark text-danger text-left'>
               Log Out
               </button>
             </Menu.Item>

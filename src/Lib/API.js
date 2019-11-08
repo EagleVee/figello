@@ -54,7 +54,6 @@ const GET = (url, config = {}) => {
 }
 
 const POST = (url, params, config = {}) => {
-  console.log(params)
   return instance
     .post(url, params, config)
     .then(checkStatus)
@@ -80,29 +79,22 @@ const API = {
     instance.defaults.headers.common.Authorization = accessToken
   },
   auth: {
-    login: (email, password) => {
+    login: (data) => {
       const path = '/auth/login'
-      const data = {
-        email: email,
-        password: password
-      }
       return POST(path, data, {})
     },
-    register: (firstName, lastName, email, password) => {
+    register: (data) => {
       const path = '/auth/register'
-      const data = {
-        first_name: firstName,
-        last_name: lastName,
-        email: email,
-        password: password
-      }
       return POST(path, data, {})
     },
     validateToken: () => {
       const path = '/auth/token/validate'
       return GET(path)
     },
-    auth: () => {}
+    logout: () => {
+      const path = '/auth/logout'
+      return POST(path)
+    }
   },
   board: {
     getListBoard: (id) => {

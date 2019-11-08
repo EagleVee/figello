@@ -25,7 +25,7 @@ export const validateTokenSuccess = (state, action) => {
   })
 }
 
-export const logoutTokenSuccess = (state, action) => {
+export const logoutSuccess = (state, action) => {
   return state.merge({
     isAuthenticated: false,
     user: {}
@@ -35,5 +35,5 @@ export const logoutTokenSuccess = (state, action) => {
 export const reducer = createReducer(INITIAL_STATE, {
   [AuthTypes.LOGIN_SUCCESS]: loginSuccess,
   [AuthTypes.VALIDATE_TOKEN_SUCCESS]: validateTokenSuccess,
-  [AuthTypes.LOGOUT_TOKEN_SUCCESS]: logoutTokenSuccess,
+  [AuthTypes.LOGOUT_SUCCESS]: logoutSuccess
 })

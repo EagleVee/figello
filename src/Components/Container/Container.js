@@ -8,7 +8,8 @@ export default class Container extends Component {
     containerStyle: PropTypes.object,
     menuOnClick: PropTypes.func.isRequired,
     isAuthenticated: PropTypes.bool.isRequired,
-    userName: PropTypes.string
+    userName: PropTypes.string,
+    logoutOnClick: PropTypes.func
   }
   render () {
     const layoutStyle = {
@@ -19,8 +20,7 @@ export default class Container extends Component {
       <Layout style={layoutStyle}>
         <Header className='fixed-top row' style={{ height: '10vh' }}>
           <NavBarAntd
-            loginOnPress={this.props.loginOnPress}
-            registerOnPress={this.props.registerOnPress}
+            logoutOnClick={this.props.logoutOnClick}
             isAuthenticated={this.props.isAuthenticated}
             userName={this.props.userName}
             itemOnClick={this.props.menuOnClick}
