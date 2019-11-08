@@ -104,7 +104,7 @@ class BrowseBoardPage extends Component {
     const data = {
       title: title,
       description: description,
-      owner: auth.user.id
+      owner: auth.user._id
     }
     createBoard(data, this.createBoardSuccess, this.createBoardFailed)
   }
@@ -133,7 +133,7 @@ class BrowseBoardPage extends Component {
 
   getListBoard = () => {
     const { auth, getListBoard } = this.props
-    getListBoard(auth.user.id)
+    getListBoard(auth.user._id)
   }
 
   componentDidMount () {
