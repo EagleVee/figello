@@ -10,8 +10,10 @@ class BoardPage extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      modalVisible: false,
-      title: ''
+      cardModalVisible: false,
+      columnModalVisible: false,
+      cardTitle: '',
+      columnTitle: ''
     }
   }
 
@@ -21,14 +23,19 @@ class BoardPage extends Component {
     return (
       <div className='main-background'>
         <div className='wrapper pl-3 pr-3'>
-          <div className='row'>
+          <div className='column-container'>
             <ColumnList
               newCardOnClick={this.handleNewCardOnClick}
               columns={listColumn}
             />
+            <div className='add-column-wrapper' onClick={this.handleNewColumnOnClick}>
+              <i className='fa fa-plus mr-2 add-icon' />
+              <span className='add-column-label'>Add column</span>
+            </div>
           </div>
         </div>
         {this.renderAddCardModal()}
+        {this.renderAddColumnModal()}
       </div>
     )
   }
@@ -36,10 +43,10 @@ class BoardPage extends Component {
   renderAddCardModal () {
     return (
       <Modal
-        title='Create new board'
-        visible={this.state.modalVisible}
+        title='Create new card'
+        visible={this.state.cardModalVisible}
         onCancel={() => {
-          this.setModalInvisible()
+          this.setCardModalInvisible()
         }}
         footer={[
           <Button key="submit" type="primary" onClick={this.handleCreateCard}>
@@ -51,29 +58,82 @@ class BoardPage extends Component {
         <input
           className='title-input'
           type='text'
-          value={this.state.title}
+          value={this.state.cardTitle}
           onChange={(e) => {
             this.setState({
-              title: e.target.value
+              cardTitle: e.target.value
             })
           }}/>
       </Modal>
     )
   }
 
+  renderAddColumnModal = () => {
+    return (
+      <Modal
+        title='Create new column'
+        visible={this.state.columnModalVisible}
+        onCancel={() => {
+          this.setColumnModalInvisible()
+        }}
+        footer={[
+          <Button key="submit" type="primary" onClick={this.handleCreateColumn}>
+            Create
+          </Button>
+        ]}
+      >
+        <p className='title-modal'>New Column Title: </p>
+        <input
+          className='title-input'
+          type='text'
+          value={this.state.columnTitle}
+          onChange={(e) => {
+            this.setState({
+              columnTitle: e.target.value
+            })
+          }}/>
+      </Modal>
+    )
+  }
+
+  handleNewColumnOnClick = () => {
+    this.setColumnModalVisible()
+  }
+
+  handleCreateColumn = () => {
+    const { id } = this.props.match.params
+    const { createColumn } = this.props
+    const { columnTitle } = this.state
+    const data = {
+      board: id,
+      title: columnTitle
+    }
+    createColumn(data, this.createColumnSuccess, this.createColumnFailed)
+  }
+
+  createColumnSuccess = () => {
+    this.setColumnModalInvisible(() => {
+      this.getColumnList()
+    })
+  }
+
+  createColumnFailed = () => {
+    this.setColumnModalInvisible()
+  }
+
   handleNewCardOnClick = (columnId) => {
     this.setState({
       column: columnId
     })
-    this.setModalVisible()
+    this.setCardModalVisible()
   }
 
   handleCreateCard = (event) => {
     const { createCard, auth } = this.props
     const { user } = auth
-    const { title, column } = this.state
+    const { cardTitle, column } = this.state
     const data = {
-      title: title,
+      title: cardTitle,
       column: column,
       created_by: user._id
     }
@@ -81,24 +141,39 @@ class BoardPage extends Component {
   }
 
   createCardSuccess = () => {
-    this.setModalInvisible(() => {
+    this.setCardModalInvisible(() => {
+      this.setState({
+        cardTitle: ''
+      })
       this.getColumnList()
     })
   }
 
   createCardFailed = () => {
-    this.setModalInvisible()
+    this.setCardModalInvisible()
   }
 
-  setModalVisible = () => {
+  setCardModalVisible = () => {
     this.setState({
-      modalVisible: true
+      cardModalVisible: true
     })
   }
 
-  setModalInvisible = (callback) => {
+  setCardModalInvisible = (callback) => {
     this.setState({
-      modalVisible: false
+      cardModalVisible: false
+    }, callback)
+  }
+
+  setColumnModalVisible = () => {
+    this.setState({
+      columnModalVisible: true
+    })
+  }
+
+  setColumnModalInvisible = (callback) => {
+    this.setState({
+      columnModalVisible: false
     }, callback)
   }
 
@@ -123,6 +198,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getListColumn: (id) => dispatch(BoardActions.getListColumn(id)),
+    createColumn: (data, onSuccess, onFailed) => dispatch(BoardActions.createColumn(data, onSuccess, onFailed)),
     createCard: (data, onSuccess, onFailed) => dispatch(BoardActions.createCard(data, onSuccess, onFailed))
   }
 }
