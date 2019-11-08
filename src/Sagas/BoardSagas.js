@@ -74,7 +74,7 @@ export function * deleteColumn (action) {
 
 export function * createCard (action) {
   const { data, onSuccess, onFailed } = action
-  const response = yield call(API.column.createColumn, data)
+  const response = yield call(API.card.createCard, data)
   if (response.status) {
     yield put(BoardActions.createBoardSuccess(response))
     if (onSuccess) yield call(onSuccess)
@@ -85,7 +85,7 @@ export function * createCard (action) {
 
 export function * updateCard (action) {
   const { id, data } = action
-  const response = yield call(API.column.updateColumn, id, data)
+  const response = yield call(API.card.updateCard, id, data)
   if (response.status) {
     yield put(BoardActions.getListBoard())
   }
@@ -93,7 +93,7 @@ export function * updateCard (action) {
 
 export function * deleteCard (action) {
   const { id } = action
-  const response = yield call(API.column.deleteColumn, id)
+  const response = yield call(API.card.deleteCard, id)
   if (response.status) {
     yield put(BoardActions.getListBoard())
   }

@@ -54,6 +54,7 @@ const GET = (url, config = {}) => {
 }
 
 const POST = (url, params, config = {}) => {
+  console.log(params)
   return instance
     .post(url, params, config)
     .then(checkStatus)

@@ -99,8 +99,24 @@ class BrowseBoardPage extends Component {
   }
 
   handleCreateBoard = (event) => {
-    const { createBoard } = this.props
+    const { createBoard, auth } = this.props
     const { title, description } = this.state
+    const data = {
+      title: title,
+      description: description,
+      owner: auth.user.id
+    }
+    createBoard(data, this.createBoardSuccess, this.createBoardFailed)
+  }
+
+  createBoardSuccess = () => {
+    this.setModalInvisible(() => {
+      this.getListBoard()
+    })
+  }
+
+  createBoardFailed = () => {
+    this.setModalInvisible()
   }
 
   setModalVisible = () => {
@@ -109,10 +125,15 @@ class BrowseBoardPage extends Component {
     })
   }
 
-  setModalInvisible = () => {
+  setModalInvisible = (callback) => {
     this.setState({
       modalVisible: false
-    })
+    }, callback)
+  }
+
+  getListBoard = () => {
+    const { auth, getListBoard } = this.props
+    getListBoard(auth.user.id)
   }
 
   componentDidMount () {
@@ -128,7 +149,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createBoard: (data) => dispatch(BoardActions.createBoard(data))
+    getListBoard: (id) => dispatch(BoardActions.getListBoard(id)),
+    createBoard: (data, onSuccess, onFailed) => dispatch(BoardActions.createBoard(data, onSuccess, onFailed))
   }
 }
 
