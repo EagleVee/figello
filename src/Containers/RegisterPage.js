@@ -132,7 +132,7 @@ class RegisterPage extends Component {
   }
 
   registerOnSuccess = () => {
-    this.props.history.push('/board')
+    this.props.history.push('/boards')
   }
 
   registerOnFailed = () => {
