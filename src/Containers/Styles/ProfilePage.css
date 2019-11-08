@@ -58,9 +58,15 @@
   width: 70%;
 }
 
-
+.profile-aside {
+  min-width: 300px;
+}
 
 .profile-page {
   margin-top: 10%;
   padding-bottom: 20%;
+}
+
+.profile-detail {
+  padding: 4px 8px !important;
 }

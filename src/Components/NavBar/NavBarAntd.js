@@ -30,7 +30,7 @@ export default class NavBarAntd extends Component {
         mode='horizontal'>
         <Menu.Item key='home' style={style.menuItem}>
           <Icon type='home'/>
-          HomePage
+          Home
         </Menu.Item>
         <Menu.Item key='boards' style={style.menuItem}>
           <Icon type='carry-out'/>

@@ -61,14 +61,33 @@ class BoardPage extends Component {
     )
   }
 
-  handleNewCardOnClick = (event) => {
-    // event.preventDefault()
+  handleNewCardOnClick = (columnId) => {
+    this.setState({
+      column: columnId
+    })
     this.setModalVisible()
   }
 
   handleCreateCard = (event) => {
-    const { createCard } = this.props
-    const { title } = this.state
+    const { createCard, auth } = this.props
+    const { user } = auth
+    const { title, column } = this.state
+    const data = {
+      title: title,
+      column: column,
+      created_by: user._id
+    }
+    createCard(data, this.createCardSuccess, this.createCardFailed)
+  }
+
+  createCardSuccess = () => {
+    this.setModalInvisible(() => {
+      this.getColumnList()
+    })
+  }
+
+  createCardFailed = () => {
+    this.setModalInvisible()
   }
 
   setModalVisible = () => {
@@ -77,10 +96,10 @@ class BoardPage extends Component {
     })
   }
 
-  setModalInvisible = () => {
+  setModalInvisible = (callback) => {
     this.setState({
       modalVisible: false
-    })
+    }, callback)
   }
 
   componentDidMount () {
@@ -96,6 +115,7 @@ class BoardPage extends Component {
 
 const mapStateToProps = state => {
   return {
+    auth: state.auth,
     board: state.board
   }
 }
@@ -103,7 +123,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getListColumn: (id) => dispatch(BoardActions.getListColumn(id)),
-    createCard: (data) => dispatch(BoardActions.createCard(data))
+    createCard: (data, onSuccess, onFailed) => dispatch(BoardActions.createCard(data, onSuccess, onFailed))
   }
 }
 

@@ -13,12 +13,12 @@ import {
   register
 } from './AuthSagas'
 import {
-  createBoard,
+  createBoard, createCard,
   createColumn,
-  deleteBoard, deleteColumn,
+  deleteBoard, deleteCard, deleteColumn,
   getListBoard,
   getListColumn,
-  updateBoard,
+  updateBoard, updateCard,
   updateColumn
 } from './BoardSagas'
 
@@ -37,6 +37,9 @@ export default function * root () {
     takeLatest(BoardTypes.GET_LIST_COLUMN, getListColumn),
     takeLatest(BoardTypes.CREATE_COLUMN, createColumn),
     takeLatest(BoardTypes.UPDATE_COLUMN, updateColumn),
-    takeLatest(BoardTypes.DELETE_COLUMN, deleteColumn)
+    takeLatest(BoardTypes.DELETE_COLUMN, deleteColumn),
+    takeLatest(BoardTypes.CREATE_CARD, createCard),
+    takeLatest(BoardTypes.UPDATE_CARD, updateCard),
+    takeLatest(BoardTypes.DELETE_CARD, deleteCard)
   ])
 }

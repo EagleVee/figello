@@ -11,6 +11,7 @@ import BrowseBoardPage from './BrowseBoardPage'
 import BoardPage from './BoardPage'
 import { Route, Redirect, Router } from 'react-router-dom'
 import Container from '../Components/Container/Container'
+import ProfilePage from './ProfilePage'
 
 // export const history =
 class RootContainer extends Component {
@@ -41,6 +42,7 @@ class RootContainer extends Component {
           <Route exact path='/login' component={LoginPage} />
           <Route exact path='/register' component={RegisterPage} />
           <Route exact path='/boards' component={BrowseBoardPage} />
+          <Route exact path='/profile' component={ProfilePage} />
           <Route
             exact
             path='/board/:id' render={(props) => {

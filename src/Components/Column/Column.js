@@ -28,7 +28,6 @@ export default class Column extends Component {
           <div className=''>
             <Droppable droppableId={_id}>
               {(provided, snapshot) => {
-                console.log(provided)
                 return <div
                   ref={provided.innerRef}
                   style={getListStyle(snapshot.isDraggingOver)}

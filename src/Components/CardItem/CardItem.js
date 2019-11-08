@@ -33,7 +33,7 @@ export default class CardItem extends Component {
             <Row gutter={10} type='flex' className='card-item-wrapper'>
               <Col xs={24}>
                 {tag.map((val, index) => {
-                  return <div className='card-label-wrapper'>
+                  return <div key={index} className='card-label-wrapper'>
                     <span className='card-label' style={{backgroundColor: val.color}}/>
                   </div>
                 })}
