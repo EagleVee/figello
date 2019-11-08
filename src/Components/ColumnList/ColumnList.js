@@ -6,7 +6,8 @@ import PropTypes from "prop-types";
 
 export default class ColumnList extends Component {
   static propTypes = {
-    columns: PropTypes.array.isRequired
+    columns: PropTypes.array.isRequired,
+    newCardOnClick: PropTypes.func.isRequired
   }
 
   onDragEnd = async (result) => {
@@ -27,6 +28,7 @@ export default class ColumnList extends Component {
             {
               this.props.columns.map((val, index) => {
                 return <Column
+                  newCardOnClick={this.props.newCardOnClick}
                   key={index}
                   index={index}
                   data={val}

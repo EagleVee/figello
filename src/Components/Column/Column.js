@@ -7,7 +7,8 @@ import './Column.css'
 
 export default class Column extends Component {
   static propTypes = {
-    data: PropTypes.object.isRequired
+    data: PropTypes.object.isRequired,
+    newCardOnClick: PropTypes.func.isRequired
   }
   render () {
     const getListStyle = (isDraggingOver) => ({
@@ -45,7 +46,9 @@ export default class Column extends Component {
                 </div>
               }}
             </Droppable>
-            <div className='add-wrapper'>
+            <div className='add-wrapper' onClick={() => {
+              this.props.newCardOnClick(_id)
+            }}>
               <i className='fa fa-plus mr-2 add-icon' />
               <span className='add-label'>Add another card</span>
             </div>
