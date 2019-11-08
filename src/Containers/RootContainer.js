@@ -31,7 +31,7 @@ class RootContainer extends Component {
             path='/'
             render={() => {
               if (isAuthenticated === true) {
-                return <Redirect to='/board' />
+                return <Redirect to='/boards' />
               } else {
                 return <HomePage />
               }
@@ -40,10 +40,11 @@ class RootContainer extends Component {
           <Route exact path='/home' component={HomePage} />
           <Route exact path='/login' component={LoginPage} />
           <Route exact path='/register' component={RegisterPage} />
-          <Route exact path='/board' component={BrowseBoardPage} />
+          <Route exact path='/boards' component={BrowseBoardPage} />
           <Route
-            path='/board-item/:id' render={(props) => {
-              return <BoardPage key={props.match.params.id} />
+            exact
+            path='/board/:id' render={(props) => {
+              return <BoardPage key={props.match.params.id} match={props.match} />
             }}
           />
         </Router>

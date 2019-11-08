@@ -3,40 +3,24 @@ import 'antd/dist/antd.css'
 import './Styles/BoardPage.css'
 import ColumnList from '../Components/ColumnList/ColumnList'
 import { connect } from 'react-redux'
+import BoardActions from '../Redux/Actions/BoardActions'
 
 class BoardPage extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      columns: [
-        {
-          _id: 1,
-          name: 'Backlog'
-        },
-        {
-          _id: 2,
-          name: 'To do'
-        },
-        {
-          _id: 3,
-          name: 'Doing'
-        },
-        {
-          _id: 4,
-          name: 'Finished'
-        }
-      ],
-      data: []
     }
   }
 
   render () {
+    const { board } = this.props
+    const { listColumn } = board
     return (
       <div className='main-background'>
         <div className='wrapper pl-3 pr-3'>
           <div className='row'>
             <ColumnList
-              columns={this.state.columns}
+              columns={listColumn}
             />
           </div>
         </div>
@@ -45,16 +29,26 @@ class BoardPage extends Component {
   }
 
   componentDidMount () {
-    console.log('HISTORY', this.props.history)
+    this.getColumnList()
+  }
+
+  getColumnList = () => {
+    const { getListColumn } = this.props
+    const { id } = this.props.match.params
+    getListColumn(id)
   }
 }
 
 const mapStateToProps = state => {
-  return {}
+  return {
+    board: state.board
+  }
 }
 
 const mapDispatchToProps = dispatch => {
-  return {}
+  return {
+    getListColumn: (id) => dispatch(BoardActions.getListColumn(id))
+  }
 }
 
 export default connect(

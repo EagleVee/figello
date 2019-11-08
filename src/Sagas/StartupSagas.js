@@ -5,7 +5,6 @@ import AuthActions from '../Redux/Actions/AuthActions'
 
 export function * startup (action) {
   const accessToken = CookieHelper.get('accessToken', '')
-  console.log('ACCESS TOKEN', accessToken)
   yield call(API.setHeaderToken, accessToken)
   yield put(AuthActions.validateToken())
 }

@@ -43,3 +43,16 @@
   height: 100%;
   background-image: url("../../Images/background.jpg");
 }
+
+.title-input {
+  width: 100%;
+  padding: 4px 8px;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 1px solid #E2DFDE;
+}
+
+.title-modal {
+  font-size: 16px;
+  font-weight: 500;
+}

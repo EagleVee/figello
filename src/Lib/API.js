@@ -120,6 +120,38 @@ const API = {
       const path = '/board/' + id
       return DELETE(path)
     }
+  },
+  column: {
+    getListColumn: (id) => {
+      const path = '/column/board/' + id
+      return GET(path)
+    },
+    createColumn: (data) => {
+      const path = '/column'
+      return POST(path, data)
+    },
+    updateColumn: (id, data) => {
+      const path = '/column/' + id
+      return PUT(path, data)
+    },
+    deleteColumn: (id) => {
+      const path = '/column/' + id
+      return DELETE(path)
+    }
+  },
+  card: {
+    createCard: (data) => {
+      const path = '/card'
+      return POST(path, data)
+    },
+    updateCard: (id, data) => {
+      const path = '/card/' + id
+      return PUT(path, data)
+    },
+    deleteCard: (id) => {
+      const path = '/card/' + id
+      return DELETE(path)
+    }
   }
 }
 

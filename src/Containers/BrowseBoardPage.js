@@ -1,62 +1,121 @@
-import React, {Component} from "react";
-import {Link} from "react-router-dom";
-import "antd/dist/antd.css";
-import "./Styles/BoardPage.css";
-import {connect} from "react-redux";
-import {Card, Avatar} from "antd";
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import 'antd/dist/antd.css'
+import './Styles/BoardPage.css'
+import { connect } from 'react-redux'
+import { Card, Avatar, Modal, Button } from 'antd'
 import BoardActions from '../Redux/Actions/BoardActions'
+import Board from "./Board";
 
 class BrowseBoardPage extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
-      data: ['brown', '#a77858', 'blue', 'green', 'purple', 'orange', '#af3990']
-    };
+      modalVisible: false,
+      title: '',
+      description: '',
+      colors: ['brown', '#a77858', 'blue', 'green', 'purple', 'orange', '#af3990']
+    }
   }
 
-
-  render() {
+  render () {
+    const { board } = this.props
+    const { listBoard } = board
     return (
-      <div className="container wrapper">
-        <div className="header">
-          <i className='fa fa-user fa-2x mr-3'/>
-          <h3 className="headline">Personal boards</h3>
+      <div className='container wrapper'>
+        <div className='header'>
+          <i className='fa fa-user fa-2x mr-3' />
+          <h3 className='headline'>Personal boards</h3>
         </div>
-        <div className="row">
-          {this.state.data.map((val) => {
+        <div className='row'>
+          {listBoard.map((board) => {
+            const backgroundColor = this.state.colors[Math.floor(Math.random() * this.state.colors.length)]
             return (
-              <div key={val} className="col-lg-3 col-md-4 col-sm-6 card-container">
-                <Link to={`/board-item/1`}>
-                  <Card className='card card-light' loading={false} style={{backgroundColor: val}}>
+              <div key={board._id} className='col-lg-3 col-md-4 col-sm-6 card-container'>
+                <Link to={`/board/${board._id}`}>
+                  <Card className='card card-light' loading={false} style={{ backgroundColor: backgroundColor }}>
                     <Card.Meta
-                      title="Card title"
-                      description="This is the description"
+                      title={board.title}
+                      description={board.description}
                     />
                   </Card>
                 </Link>
               </div>
-            );
+            )
           })}
-          <div className="col-lg-3 col-md-4 col-sm-6 card-container">
-            <Card className='card card-dark' loading={false} style={{backgroundColor: '#ddd', minHeight: '100%'}}>
+          <div onClick={this.handleNewBoardOnClick} className='col-lg-3 col-md-4 col-sm-6 card-container'>
+            <Card className='card card-dark' loading={false} style={{ backgroundColor: '#ddd', minHeight: '100%' }}>
               <div className='vertical-center horizontal-center'>
-                <p className='text-center mb-0' style={{fontSize: '18px'}}>Create new board</p>
+                <p className='text-center mb-0' style={{ fontSize: '18px' }}>Create new board</p>
               </div>
             </Card>
           </div>
         </div>
+        {this.renderModal()}
       </div>
-    );
+    )
   }
 
-  componentDidMount() {
-    this.getListBoard()
+  renderModal = () => {
+    return (
+      <Modal
+        title='Create new board'
+        visible={this.state.modalVisible}
+        onCancel={() => {
+          this.setModalInvisible()
+        }}
+        footer={[
+          <Button key="submit" type="primary" onClick={this.handleCreateBoard}>
+            Create
+          </Button>
+        ]}
+      >
+        <p className='title-modal'>New Board Title: </p>
+        <input
+          className='title-input'
+          type='text'
+          value={this.state.title}
+          onChange={(e) => {
+          this.setState({
+            title: e.target.value
+          })
+        }}/>
+        <p className='title-modal mt-2'>Description:</p>
+        <textarea
+          className='title-input'
+          value={this.state.description}
+          onChange={(e) => {
+            this.setState({
+              description: e.target.value
+            })
+          }}/>
+      </Modal>
+    )
   }
 
-  getListBoard = () => {
-    const { user } = auth
-    const id = user.id ? user.id : ''
-    this.props.getListBoard(id)
+  handleNewBoardOnClick = (event) => {
+    event.preventDefault()
+    this.setModalVisible()
+  }
+
+  handleCreateBoard = (event) => {
+    const { createBoard } = this.props
+    const { title, description } = this.state
+  }
+
+  setModalVisible = () => {
+    this.setState({
+      modalVisible: true
+    })
+  }
+
+  setModalInvisible = () => {
+    this.setState({
+      modalVisible: false
+    })
+  }
+
+  componentDidMount () {
   }
 }
 
@@ -64,16 +123,16 @@ const mapStateToProps = state => {
   return {
     auth: state.auth,
     board: state.board
-  };
-};
+  }
+}
 
 const mapDispatchToProps = dispatch => {
   return {
-    getListBoard: (id) => dispatch(BoardActions.getListBoard(id))
-  };
-};
+    createBoard: (data) => dispatch(BoardActions.createBoard(data))
+  }
+}
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(BrowseBoardPage);
+)(BrowseBoardPage)

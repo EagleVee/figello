@@ -2,22 +2,11 @@ import React, { Component } from 'react'
 import { DragDropContext } from 'react-beautiful-dnd'
 import Column from '../Column/Column'
 import './ColumnList.css'
+import PropTypes from "prop-types";
 
 export default class ColumnList extends Component {
-  state = {
-    data: [{
-      _id: 1,
-      name: 'Account management',
-    }, {
-      _id: 2,
-      name: 'Board management',
-    }, {
-      _id: 3,
-      name: 'Task management'
-    }, {
-      _id: 4,
-      name: 'Project management',
-    }]
+  static propTypes = {
+    columns: PropTypes.array.isRequired
   }
 
   onDragEnd = async (result) => {
@@ -40,8 +29,7 @@ export default class ColumnList extends Component {
                 return <Column
                   key={index}
                   index={index}
-                  name={val.name}
-                  data={this.state.data}
+                  data={val}
                 />;
               })
             }

@@ -6,7 +6,12 @@ const { Types, Creators } = createActions({
   createBoard: ['data', 'onSuccess', 'onFailed'],
   createBoardSuccess: ['response'],
   updateBoard: ['id', 'data'],
-  deleteBoard: ['id']
+  deleteBoard: ['id'],
+  getListColumn: ['id'],
+  getListColumnSuccess: ['response'],
+  createColumn: ['data', 'onSuccess', 'onFailed'],
+  updateColumn: ['id', 'data'],
+  deleteColumn: ['id']
 })
 
 export const BoardTypes = Types

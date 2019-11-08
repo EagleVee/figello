@@ -12,7 +12,15 @@ import {
   logoutToken,
   register
 } from './AuthSagas'
-import { createBoard, deleteBoard, getListBoard, updateBoard } from './BoardSagas'
+import {
+  createBoard,
+  createColumn,
+  deleteBoard, deleteColumn,
+  getListBoard,
+  getListColumn,
+  updateBoard,
+  updateColumn
+} from './BoardSagas'
 
 export default function * root () {
   yield all([
@@ -25,6 +33,10 @@ export default function * root () {
     takeLatest(BoardTypes.GET_LIST_BOARD, getListBoard),
     takeLatest(BoardTypes.CREATE_BOARD, createBoard),
     takeLatest(BoardTypes.UPDATE_BOARD, updateBoard),
-    takeLatest(BoardTypes.DELETE_BOARD, deleteBoard)
+    takeLatest(BoardTypes.DELETE_BOARD, deleteBoard),
+    takeLatest(BoardTypes.GET_LIST_COLUMN, getListColumn),
+    takeLatest(BoardTypes.CREATE_COLUMN, createColumn),
+    takeLatest(BoardTypes.UPDATE_COLUMN, updateColumn),
+    takeLatest(BoardTypes.DELETE_COLUMN, deleteColumn)
   ])
 }
